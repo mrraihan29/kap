@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'log.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/gif" sizes="16x16">
+</head>
+<body>
+    <div class="wrapper">
+        <form method="post">
+            <div class="title-bar">
+                <h2>Login</h2>
+                <div class="border-bottom">-</div>
+            </div>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="submit-button">
+                <input type="submit" value="Login">
+            </div>
+            <br>
+            <div class="question">
+                <h3>Don't have an account? <a href="{% url 'account:signup' %}">Sign up now</a></h3>
+            </div>
+        </form>
+        <div class="back-button">
+            <a href="{% url 'home' %}"><button type="button">Kembali</button></a>
+        </div>
+    </div>
+</body>
+</html>

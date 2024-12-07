@@ -1,0 +1,484 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+/* START CSS */
+
+/* START HEADER CSS */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.popup-close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+
+.logout-button {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+header{
+  height: auto;
+  width: 100%;
+  background-color: #f3f7ff;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  font-family: "Russo One", sans-serif;
+  background-color: #f3f7ff;
+
+}
+
+nav{
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.nav-menu ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  font-size: 24px;
+  position: relative;
+}
+
+.nav-menu ul li{
+  position: relative;
+}
+
+.nav-menu ul li a{
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease; /*tambahan*/
+  position: relative;
+}
+
+
+.nav-menu ul li a:hover{
+  color: #007bff;
+}
+
+.nav-menu ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FABC3F;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.logo-container h1{
+  margin-left: 15px;
+}
+
+
+header nav img{
+  height: 60px;
+  width: 60px;
+}
+
+.sign-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*width: 90px;*/
+}
+
+.sign-container a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.sign-container a:hover{
+  color: #007bff;
+}
+
+
+.sign-container img{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.sign-container .hover-img {
+  display: none;
+}
+
+.sign-container a:hover .default-img {
+  display: none;
+}
+
+.sign-container a:hover .hover-img {
+  display: inline-block;
+  transform: scale(1.1); /* Membesarkan gambar saat di-hover */
+}
+
+.sign-container span {
+  font-size: 16px;
+}
+
+.sign-container h1{
+  font-size: 20px;
+  color: #3f51b5;
+  font-weight: bold;
+  font-style: italic;
+  padding-right: 40px;
+}
+
+/* END HEADER CSS */
+
+/* START BODY CSS */
+
+.back-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.back-button a:hover{
+  color: #007bff;
+}
+
+.back-button img{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+
+
+.back-button .hover-button{
+  display: none;
+}
+
+.back-button a:hover .default-button{
+  display: none;
+}
+
+.back-button a:hover .hover-button{
+  display: inline-block;
+  transform: scale(1.1);
+}
+
+.back-button span{
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+
+/*.button-back button{
+  background-color: #316CF4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+.button img{
+  width: 20px;
+  height: 20px;
+}
+
+.back-button span {
+  font-size: 16px;
+} */
+
+.container-read {
+  padding-left:200px;
+  padding-right:200px;
+  padding-top: 50px;
+}
+
+.title-container{
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container p{
+  font-size: 24px;
+  padding-top: 20px;
+  color: #747474;
+}
+
+.judul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.judul h1{
+  font-size: 30px;
+  color: #222222;
+  font-weight: 700;
+}
+
+.judul h2{
+  font-size: 20px;
+  background-color: #134B70;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.author{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.author img{
+  width: 50px;
+  height: 50px;
+}
+
+.author h2{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.artc-read{
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.artc-read img{
+  width: 100%;
+}
+
+.artc-read p{
+  padding-top: 40px;
+  font-size: 24px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+
+/* END BODY CSS */
+
+/* START FOOTER CSS */
+footer{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  background-color: #316CF4;
+  color: white;
+  height:400px ;
+}
+
+.footer-kiri{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 200px;
+}
+
+.footer-kiri iframe{
+  width: 750px;
+  height: 340px;
+  border: 0;
+}
+
+
+.footer-kanan{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 80px 50px;
+}
+.footer-kanan h1 {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+.footer-kanan p:nth-child(2) {
+  font-size: 30px;
+}
+
+
+.footer-kanan p:nth-child(3) {
+  font-size: 20px;
+}
+
+.footer-kanan p:nth-child(4) {
+  font-size: 20px;
+}
+
+.sosmed {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.sosmed a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+}
+
+.sosmed img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sosmed span {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+
+}
+
+.copy{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+/* END FOOTER CSS */
+
+/* END CSS */
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #fabc3f #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 30px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #fabc3f;
+    border-radius: 100px;
+    border: 4px solid #ffffff;
+  }

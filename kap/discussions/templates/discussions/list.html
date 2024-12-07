@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuss Page</title>
+    <link rel="shortcut icon" type="img/png" href="{% static "img/turn.png" %}">
+    <link rel="stylesheet" href="{% static "diskusi.css" %}">
+    <link rel="stylesheet" href="{% static "popup.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Lora:ital,wght@0,400..700;1,400..700&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rammetto+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="{% static 'nw-logo.png' %}" alt="">
+                <h1>Klinik Akuntansi Pajak</h1>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/diskusi">Diskusi</a></li>
+                    <li><a href="/artikel">Artikel</a></li>
+                </ul>
+            </div>
+            <div class="sign-container">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'account:logout' %}" id="username">{{ user.username }}</a>
+                {% else %}
+                    <a href="{% url 'account:login' %}">
+                        <img src="{% static 'user-blue.png' %}" alt="" class="default-img">
+                        <img src="{% static 'user-yellow.png' %}" alt="" class="hover-img">
+                        <span>Sign In</span>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <section class="discuss-container">
+        <div class="discuss-add">
+            <form method="post" class="addDiskusi" action="{% url 'discussions:list' %}">
+                {% csrf_token %}
+                <div class="addkiri">
+                    <h1>Diskusi Baru</h1>
+                    <select name="category" class="category-select" required>
+                        <option value="" disabled selected>Pilih Kategori</option>
+                        {% for category in category_options %}
+                        <option value="{{ category.value }}">{{ category.label }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+
+                <div class="addkanan">
+                    <textarea required name="content" class="content-textarea" placeholder="Isi diskusi..."></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="filter">
+          <select id="filter-select" class="filter-select" value={{ request.GET.category }}>
+              <option value="" class="border-bottom">Semua Kategori</option>
+              {% for category in category_options %}
+              <option value="{{ category.value }}" {% if category.value == request.GET.category %}selected{% endif %}>{{ category.label }}</option>
+              {% endfor %}
+          </select>
+          <button id="filter-button" class="filter-button">Filter</button>
+          <button id="filter-reset" class="filter-button">Reset</button>
+        </div>
+
+        <div class="discuss-list">
+            {% for discussion in discussions %}
+            <div class="card-container" onclick="openPopup('{{ discussion.id }}')">
+                <div class="discuss-title">
+                    <h1>"</h1>
+                    <div class="timestamp">{{ discussion.time_since }} yang lalu</div>
+                </div>
+
+                <div id="discussion-content" class="discuss-content">
+                    {{discussion.content}}
+                </div>
+
+                <div class="discuss-footer">
+                    <div class="user">
+                        <div class="user-name">{{ discussion.user }}</div>
+                    </div>
+                    <div class="category">{{ discussion.get_category_display }}</div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </section>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            {% comment %}
+            <span class="close" onclick="closePopup()">&times;</span>
+            {% endcomment %}
+            <div id="popup-body"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-kiri">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="footer-kanan">
+            <h1>Lokasi Kami</h1>
+            <p>Surakarta</p>
+            <p>Jl. Jend. Urip Sumoharjo, Purwodiningratan, Jebres, Kota Surakarta</p>
+            <p>+62 822-1114-5400</p>
+            <div class="sosmed">
+                <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                    <img src="{% static 'white-ig.png' %}" alt="">
+                    <span>@klinikakuntansipajak</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <div class="copy">
+        <p>Universitas Sebelas Maret</p>
+    </div>
+    <script src="{% static 'popup.js' %}"></script>
+    <script>
+        {% if discussion_id %}
+            openPopup('{{ discussion_id }}');
+        {% endif %}
+
+        document.getElementById('filter-button').addEventListener('click', function() {
+            var selectedCategory = document.getElementById('filter-select').value;
+            var url = new URL("{% url 'discussions:list' %}", window.location.origin);
+            if (selectedCategory) {
+                url.searchParams.append('category', selectedCategory);
+            }
+            window.location.href = url.toString();
+        });
+        document.getElementById('filter-reset').addEventListener('click', function() {
+            var url = new URL("{% url 'discussions:list' %}", window.location.origin);
+            window.location.href = url.toString();
+        });
+
+        var contentElements = document.getElementsByClassName('discuss-content');
+        Array.prototype.forEach.call(contentElements, function(contentElement) {
+            var content = contentElement.textContent;
+            if (content.length > 180) {
+                var truncatedContent = content.substring(0, 180) + '....';
+                contentElement.textContent = truncatedContent;
+            }
+        });
+    </script>
+</body>
+</html>

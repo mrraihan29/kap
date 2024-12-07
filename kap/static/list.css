@@ -1,0 +1,418 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+/* START CSS */
+
+/* START HEADER CSS */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.popup-close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+
+.logout-button {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+header{
+  height: auto;
+  width: 100%;
+  background-color: #f3f7ff;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  font-family: "Russo One", sans-serif;
+  background-color: #f3f7ff;
+
+}
+
+nav{
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.nav-menu ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  font-size: 24px;
+  position: relative;
+}
+
+.nav-menu ul li{
+  position: relative;
+}
+
+.nav-menu ul li a{
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease; /*tambahan*/
+  position: relative;
+}
+
+
+.nav-menu ul li a:hover{
+  color: #007bff;
+}
+
+.nav-menu ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FABC3F;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.logo-container h1{
+  margin-left: 15px;
+}
+
+
+header nav img{
+  height: 60px;
+  width: 60px;
+}
+
+.sign-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*width: 90px;*/
+}
+
+.sign-container a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.sign-container a:hover{
+  color: #007bff;
+}
+
+
+.sign-container img{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.sign-container .hover-img {
+  display: none;
+}
+
+.sign-container a:hover .default-img {
+  display: none;
+}
+
+.sign-container a:hover .hover-img {
+  display: inline-block;
+  transform: scale(1.1); /* Membesarkan gambar saat di-hover */
+}
+
+.sign-container span {
+  font-size: 16px;
+}
+
+.sign-container h1{
+  font-size: 20px;
+  color: #3f51b5;
+  font-weight: bold;
+  font-style: italic;
+  padding-right: 40px;
+}
+
+
+.layout-search{
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #316CF4;
+  padding:  150px 100px;
+  row-gap: 20px;
+}
+
+.search-bar input{
+  padding: 10px 20px;
+  border: transparent;
+  font-size: 24px;
+  border-radius: 50px;
+}
+
+.search-bar p{
+  color: white;
+  font-size: larger;
+}
+
+.diskusi{
+  padding: 10px 50px;
+}
+
+.diskusi h1{
+  font-size: 40px;
+  color: #316CF4;
+  padding-bottom: 5px;
+  border-bottom: 5px solid #316CF4;
+  font-weight: bold;
+}
+
+.diskusi-box{
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 1;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 30px;
+  background-color: #134b70;
+  border-radius: 25px;
+}
+
+.diskusi-box h2{
+  color: #fabc3f;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.diskusi-kiri{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.kiri-atas{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.kiri-atas input{
+  padding: 10px;
+  border-radius: 5px;
+  border: transparent;
+  font-size: 14px;
+}
+
+.kiri-atas select{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fabc3f;
+  width: 40%;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #134b70;
+}
+
+.kiri-atas select option{
+  font-size: 14px;
+  color: #134b70;
+}
+
+
+.kiribawah button{
+  margin-top: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fabc3f;
+  width: 30%;
+  color: #134b70;
+  font-size: 20px;
+  font-weight: bolder;
+  border: none;
+}
+
+.diskusi-kanan{
+  width: 50%;
+}
+.diskusi-kanan textarea{
+  padding: 20px;
+  height: 90%;
+  width: 92%;
+  border-radius: 20px;
+}
+/* END BODY CSS */
+
+/* START FOOTER CSS */
+footer{
+  padding: 50px 50px;
+  color: white;
+  background-color: #316CF4;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+.footer-atas h1{
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.footer-bawah{
+  display: flex;
+  column-gap: 50px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+iframe{
+  border-radius: 10px;
+}
+
+.alamat{
+  position: relative;
+  margin-left: -250px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.sosmed img{
+  height: 30px;
+  padding:0 10px
+}
+
+.copy{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+/* END FOOTER CSS */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #fabc3f #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 30px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #fabc3f;
+    border-radius: 100px;
+    border: 4px solid #ffffff;
+  }

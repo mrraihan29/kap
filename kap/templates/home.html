@@ -1,0 +1,293 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'landing.css' %}" />
+    <link
+      rel="icon"
+      href="{% static 'nw-logo.png' %}"
+      type="image/gif"
+      sizes="16x16" />
+    <title>Klinik Akuntansi Pajak</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body class="preload">
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img src="{% static 'nw-logo.png' %}" alt="" />
+          <h1>Klinik Akuntansi Pajak</h1>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/diskusi">Diskusi</a></li>
+            <li><a href="/artikel">Artikel</a></li>
+          </ul>
+        </div>
+        <div class="sign-container">
+          {% if user.is_authenticated %}
+          <h1 id="username">{{ user.username }}</h1>
+          {% else %}
+          <a href="{% url 'account:login' %}">
+            <img src="{%static "user-blue.png"%}" alt="" class="default-img">
+            <img src="{%static "user-yellow.png"%}" alt="" class="hover-img">
+            <span>Sign In</span>
+          </a>
+          {% endif %}
+        </div>
+      </nav>
+
+      <div id="popup" class="popup">
+        <div class="popup-header">
+          <h2>Dashboard</h2>
+          <span id="closePopup" class="popup-close">&times;</span>
+        </div>
+        <div class="popup-content">
+          <p>Username: {{ user.username }}</p>
+          <p>Email: {{ user.email }}</p>
+          <a href="{% url 'account:logout' %}" class="logout-button">Logout</a>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const usernameElement = document.getElementById("username");
+          const popup = document.getElementById("popup");
+          const closePopup = document.getElementById("closePopup");
+
+          if (usernameElement) {
+            usernameElement.onclick = function () {
+              popup.classList.add("active");
+            };
+          }
+
+          if (closePopup) {
+            closePopup.onclick = function () {
+              popup.classList.remove("active");
+            };
+          }
+
+          window.onclick = function (event) {
+            if (event.target == popup) {
+              popup.classList.remove("active");
+            }
+          };
+        });
+      </script>
+
+      <section class="fadeinup">
+        <div class="hero">
+          <div class="text">
+            <h3>
+              Layanan <br />
+              Akuntansi dan Pajak <br />
+              Tepat
+            </h3>
+            <h2>KLINIK AKUNTANSI PAJAK</h2>
+          </div>
+          <div class="hero-img">
+            <img src="{% static 'graph.png' %}" alt="" srcset="" />
+          </div>
+        </div>
+      </section>
+    </header>
+    <!--Gambar Aktivitas -->
+    <section class="slide-container">
+      <div class="slider">
+        <div class="img-slide">
+          <img src="{% static 'opening1.JPG' %}" alt="" />
+        </div>
+        <div class="img-slide">
+          <img src="{% static 'opening2.JPG' %}" alt="" />
+        </div>
+        <div class="img-slide">
+          <img src="{% static 'opening3.JPG' %}" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!--TENTANG KAMI-->
+    <section class="about">
+      <figure>
+        <img src="{% static 'opening2.jpg' %}" alt="" />
+      </figure>
+      <aside>
+        <img src="{% static 'circle.png' %}" alt="" />
+        <h1>Tentang Kami</h1>
+        <p>
+          Klinik Akuntansi Pajak hadir sebagai jembatan antara dunia usaha dan
+          kebutuhan konsultasi keuangan serta perpajakan dengan para konsultan
+          profesional di bidangnya.
+          <br />Selain layanan konsultasi, website ini juga menyediakan forum
+          diskusi terbuka tentang akuntansi dan perpajakan yang dapat diakses
+          oleh semua kalangan. Kami juga menyajikan berbagai artikel informatif
+          mengenai regulasi perpajakan terbaru, tips keuangan, dan berbagai
+          wawasan terkait lainnya.
+        </p>
+      </aside>
+    </section>
+
+    <section class="services">
+      <div class="services-text">
+        <h1>Layanan<br />Kami.</h1>
+        <p>///</p>
+      </div>
+
+      <div class="article-service">
+        <h1>{</h1>
+        <div class="article-container">
+          <article class="services-1">
+            <h2>Diskusi</h2>
+            <br />
+            <p>
+              Forum Diskusi adalah layanan unggulan kami mengenai ruang
+              interaktif yang memungkinkan pengguna untuk berdiskusi, bertanya,
+              dan berbagi informasi mengenai berbagai topik terkait akuntansi
+              dan perpajakan.
+            </p>
+          </article>
+
+          <article class="services-2">
+            <h2>Artikel</h2>
+            <br />
+            <p>
+              Pemberian informasi terkait perpajakan dan akuntansi ini dirancang
+              untuk membantu pengguna memahami perubahan aturan, tips keuangan,
+              dan tren terbaru. Fitur komentar memungkinkan diskusi interaktif
+              yang bermanfaat.
+            </p>
+          </article>
+        </div>
+        <h1>}</h1>
+      </div>
+    </section>
+
+    <section class="vision-mission">
+      <h1>Visi & Misi <br />.Kami</h1>
+      <article class="vision">
+        <p>"</p>
+        <p>
+          Meningkatkan pemahaman akuntansi dan perpajakan pelaku UMKM melalui
+          edukasi dan pendampingan profesional, guna memastikan pemenuhan
+          kewajiban perpajakan yang akurat dan sesuai regulasi, serta mendukung
+          tata kelola usaha yang transparan dan berkelanjutan.
+        </p>
+        <p>"</p>
+      </article>
+
+      <div class="cards-container">
+        <div class="card">
+          <div class="circle">
+            <span>1</span>
+          </div>
+          <div class="content">
+            <p>
+              Layanan unggulan kami mengenai ruang interaktif yang memungkinkan
+              pengguna untuk berdiskusi, bertanya dan berbagi informasi mengenai
+              berbagai topik terkait akuntansi dan perpajakan
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="circle">
+            <span>2</span>
+          </div>
+          <div class="content">
+            <p>
+              Membantu UMKM untuk lebih memahami aspek akuntansi dan perpajakan,
+              sehingga mampu mengelola usaha mereka dengan lebih baik
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="circle">
+            <span>3</span>
+          </div>
+          <div class="content">
+            <p>
+              Membangun forum online bagi UMKM sebagai ruang berbagi pengalaman,
+              diskusi, dan solusi dengan para ahli dan sesama pelaku usaha
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-kiri">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid"
+          width="350"
+          height="350"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="footer-kanan">
+        <h1>Lokasi Kami</h1>
+        <p>Surakarta</p>
+        <p>
+          Jl. Jend. Urip Sumoharjo, Purwodiningratan, Jebres, Kota Surakarta
+        </p>
+        <p>+62 822-1114-5400</p>
+        <div class="sosmed">
+          <a
+            href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <img src="{% static 'white-ig.png' %}" alt="" />
+            <span>@klinikakuntansipajak</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <div class="copy">
+      <p>Universitas Sebelas Maret</p>
+    </div>
+    <div class="loader-wrapper">
+      <div class="container-animation">
+        <span class="loader-blue"><span class="loader-inner-b"></span></span>
+        <span class="loader-yellow"><span class="loader-inner-y"></span></span>
+      </div>
+    </div>
+    <!--<script>
+        $(window).on("load", function(){
+            // Menghapus kelas preload dari body
+            $("body").removeClass("preload");
+
+            // Menghilangkan loader setelah 5 detik
+            setTimeout(function(){
+                $(".loader-wrapper").fadeOut("slow");
+            }, 1000); // Menunggu 5 detik sebelum menghilangkan loader
+        });
+    </script>-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("visited")) {
+          // Jika pengguna belum pernah mengunjungi halaman ini
+          localStorage.setItem("visited", "true");
+          document.body.classList.add("preload");
+          document.querySelector(".loader-wrapper").style.display = "flex";
+
+          // Menghilangkan loader setelah 3 detik
+          setTimeout(function () {
+            document.querySelector(".loader-wrapper").classList.add("hidden");
+            setTimeout(function () {
+              document.body.classList.remove("preload");
+              document.querySelector(".loader-wrapper").style.display = "none";
+            }, 500); // Menunggu transisi opacity selesai
+          }, 3000); // Menunggu 3 detik sebelum menghilangkan loader
+        } else {
+          // Jika pengguna sudah pernah mengunjungi halaman ini
+          document.body.classList.remove("preload"); // Pastikan preload dihapus
+          document.querySelector(".loader-wrapper").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

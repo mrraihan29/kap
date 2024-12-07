@@ -1,0 +1,92 @@
+<!--GAK DIPAKAI SEMENTARA-->
+{%load static%}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuss Page</title>
+    <link rel="icon" href="{%static "logo.png"%}" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="{%static "artikel.css"%}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="{% static 'nw-logo.png' %}" alt="">
+                <h1>Klinik Akuntansi Pajak</h1>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/diskusi">Diskusi</a></li>
+                    <li><a href="/artikel">Artikel</a></li>
+                </ul>
+            </div>
+            <div class="sign-container">
+                {% if user.is_authenticated %}
+                    <h1 id="username">{{ user.username }}</h1>
+                {% else %}
+                    <img src="{%static "user.png"%}" alt="">
+                    <h1><a href="{% url 'account:login' %}">Sign In</a></h1>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+    <div class="full-container">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="card-container">
+                <div class="timestamp">{{ discussion.created_at|timesince }} yang lalu</div>
+                <div class="author">{{ discussion.user }}</div>
+                <div class="category">{{ discussion.category }}</div>
+                <div class="content">{{ discussion.content }}</div>
+            </div>
+            <div class="comment-container">
+                <h2>Komentar</h2>
+                {% for comment in comments %}
+                    <div class="card-comment">
+                        <div class="author">
+                            <img src="{% static 'user.jpg' %}" alt="User">
+                            {{ comment.user }}
+                        </div>
+                        <div class="content">{{ comment.content }}</div>
+                        <div class="timestamp">{{ comment.created_at|timesince }} yang lalu</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="add-comment">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <button type="submit">Kirim</button>
+                </form>
+            </div>
+        </div>
+        <a href="{% url 'discussions:list' %}">Kembali</a>
+    </div>
+    <footer>
+        <div class="footer-atas">
+            <h1>Kontak Kami</h1>
+        </div>
+        <div class="footer-bawah">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="alamat">
+                <h2>Surakarta</h2>
+                <p>email@gmail.com</p>
+                <p>+62 812-345-678</p>
+                <p>Jalan Ir. Sutami 36 Kentingan, Jebres, Surakarta.</p>
+            </div>
+            <div class="sosmed">
+                <img src="{%static "instagram.png"%}" alt="">
+                <img src="{%static "youtube.png"%}" alt="">
+                <img src="{%static "tiktok.png"%}" alt="">
+                <img src="{%static "facebook.png"%}" alt="">
+            </div>
+        </div>
+    </footer>
+    <div class="copy">
+        <p>Universitas Sebelas Maret</p>
+    </div>
+</body>
+</html>

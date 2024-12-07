@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+body{
+  margin: 50px;
+  padding: 50px;
+  font-family: "Poppins";
+  background-color: #f3f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 1em;
+  background: #134B70;
+  border-radius: 10px;
+}
+.title-bar{
+  margin-top:-20px;
+
+}
+.title-bar h2{
+  color:#FABC3F;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 24px;
+  padding-bottom: -.5em;
+}
+.border-bottom{
+  height: 5px;
+  background-color: #FABC3F;
+  border-radius: 50px;
+  width: 100%;
+  color: transparent !important;
+}
+
+
+p {
+  font-size:18px;
+  font-family: "Poppins";
+    margin-bottom: 1em;
+  font-weight:600;
+}
+
+label {
+  display: block;
+  margin-bottom: .5em;
+  color: #FABC3F;
+}
+
+input, textarea {
+  width: 100%;
+  padding: .5em;
+  border: 2px solid #134B70;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color:#F3F7FF;
+}
+
+input[type="submit"] {
+  font-family: "Poppins";
+  font-weight:600;
+  background: #FABC3F;
+  color: #134B70;
+  border: none;
+  padding: 1em;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+input[type="submit"]:hover {
+  background: #F3F7FF;
+  color:#316CF4;
+  transition:.2s;
+}
+
+.question{
+  text-align:center;
+  color:white;
+  font-family: "Poppins";
+}
+
+.question h3{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.question a{
+  padding-left: 5px;
+  color:#FABC3F;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.question a:hover{
+  color:#316CF4;
+  text-decoration: wavy;
+}
+
+.back-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f3f7ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+.back-button button {
+  font-size: 16px;
+  background-color: #134B70;
+  color: #f3f7ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+.back-button button:hover {
+  background-color: #FABC3F;
+  transition: 0.2s;
+  color:#134B70 ;
+}
+

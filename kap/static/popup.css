@@ -1,0 +1,175 @@
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.discuss {
+  margin-bottom: 20px;
+}
+
+.discuss .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.discuss .author {
+  display: flex;
+  align-items: center;
+}
+
+.discuss .author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.discuss .timestamp,
+.discuss .category {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comments .comment {
+  margin-bottom: 15px;
+}
+
+.comments .comment .author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comments .comment .content {
+  padding-left: 10px;
+  border-left: 2px solid #ddd;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  background-color: #316cf4;
+  color: white;
+  height: 400px;
+}
+
+.footer-kiri {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 200px;
+}
+
+.footer-kiri iframe {
+  width: 750px;
+  height: 340px;
+  border: 0;
+}
+
+.footer-kanan {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 80px 50px;
+}
+.footer-kanan h1 {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-kanan p:nth-child(2) {
+  font-size: 30px;
+}
+
+.footer-kanan p:nth-child(3) {
+  font-size: 20px;
+}
+
+.footer-kanan p:nth-child(4) {
+  font-size: 20px;
+}
+
+.sosmed {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.sosmed a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+}
+
+.sosmed img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sosmed span {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fabc3f #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 30px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fabc3f;
+  border-radius: 100px;
+  border: 4px solid #ffffff;
+}

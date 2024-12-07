@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comment</title>
+    <link rel="stylesheet" href="{% static 'comment.css' %}" />
+  </head>
+
+  <body>
+    <button class="close-btn" onclick="closePopup()">X</button>
+
+    <div class="discuss">
+      <div class="header">
+        <div class="author">
+          <img
+            src="{% static 'person.svg' %}"
+            style="color: #134b70"
+            alt="Person" />
+          <div>{{ discussion.user }}</div>
+        </div>
+
+        <div class="popup-category">{{ discussion.get_category_display }}</div>
+        <div class="popup-timestamp">{{ discussion.time_since }} yang lalu</div>
+      </div>
+
+      <div class="content">{{ discussion.content }}</div>
+    </div>
+
+    <div class="comment">
+      <form id="comment-form" class="comment-form" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="discussion_id" value="{{ discussion.id }}" />
+        <textarea name="content" placeholder="Komentar disini..."></textarea>
+        <button onclick="submitComment()" type="button">Komentar</button>
+      </form>
+      {% for comment in comments %}
+      <div class="isi-comment">
+        <div class="author-comment">
+          <div class="user-comment">{{ comment.user }}</div>
+          <div class="comment-timestamp">
+            {{ comment.time_since }} yang lalu
+          </div>
+        </div>
+        <div class="comment-content">{{ comment.content }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% comment %}
+    <script src="{% static 'popup.js' %}"></script>
+    {% endcomment %}
+
+    <script></script>
+  </body>
+</html>
