@@ -348,43 +348,81 @@ header nav img{
 /* END BODY CSS */
 
 /* START FOOTER CSS */
-footer{
-  padding: 50px 50px;
-  color: white;
-  background-color: #316CF4;
+footer {
   display: flex;
-  flex-direction: column;
-  row-gap: 50px;
-}
-
-.footer-atas h1{
-  font-size: 80px;
-  font-weight: 700;
-}
-
-.footer-bawah{
-  display: flex;
+  flex-direction: row;
   column-gap: 50px;
-  align-items: flex-end;
-  justify-content: space-between;
+  background-color: #316cf4;
+  color: white;
+  height: 400px;
 }
 
-iframe{
-  border-radius: 10px;
+.footer-kiri {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 200px;
 }
 
-.alamat{
-  position: relative;
-  margin-left: -250px;
-  font-size: 24px;
+.footer-kiri iframe {
+  width: 750px;
+  height: 340px;
+  border: 0;
+}
+
+.footer-kanan {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
+  padding: 80px 50px;
+}
+.footer-kanan h1 {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.sosmed img{
+.footer-kanan p:nth-child(2) {
+  font-size: 30px;
+}
+
+.footer-kanan p:nth-child(3) {
+  font-size: 20px;
+}
+
+.footer-kanan p:nth-child(4) {
+  font-size: 20px;
+}
+
+.sosmed {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+}
+.sosmed ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sosmed ul li {
+  display: flex;
+  align-items: center;
+}
+
+.sosmed ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.sosmed ul li img {
   height: 30px;
-  padding:0 10px
+  margin-right: 10px;
 }
 
 .copy{

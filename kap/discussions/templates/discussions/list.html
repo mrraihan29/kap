@@ -61,14 +61,14 @@
             </form>
         </div>
         <div class="filter">
-          <select id="filter-select" class="filter-select" value={{ request.GET.category }}>
-              <option value="" class="border-bottom">Semua Kategori</option>
-              {% for category in category_options %}
-              <option value="{{ category.value }}" {% if category.value == request.GET.category %}selected{% endif %}>{{ category.label }}</option>
-              {% endfor %}
-          </select>
-          <button id="filter-button" class="filter-button">Filter</button>
-          <button id="filter-reset" class="filter-button">Reset</button>
+            <select id="filter-select" class="filter-select" value={{ request.GET.category }}>
+                <option value="" class="border-bottom">Semua Kategori</option>
+                {% for category in category_options %}
+                <option value="{{ category.value }}" {% if category.value == request.GET.category %}selected{% endif %}>{{ category.label }}</option>
+                {% endfor %}
+            </select>
+            <button id="filter-button" class="filter-button">Filter</button>
+            <button id="filter-reset" class="filter-button">Reset</button>
         </div>
 
         <div class="discuss-list">
@@ -103,22 +103,75 @@
             <div id="popup-body"></div>
         </div>
     </div>
+
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet" />
+  <div class="floating-container">
+    <div class="floating-button">
+      <i class="material-icons">contact_phone</i>
+    </div>
+
+    <div class="element-container">
+      <a href="https://wa.me/6282211145400">
+        <span class="float-element tooltip-left">
+          <i class="material-icons"
+            ><img
+              src="{% static 'wa-white.png' %}"
+              alt=""
+              width="25px"
+              height="25x" />
+          </i>
+        </span>
+      </a>
+
+      <a href="https://instagram.com/klinikakuntansipajak">
+        <span class="float-element">
+          <i class="material-icons">
+            <img
+              src="{% static 'instagram.png' %}"
+              alt=""
+              width="25px"
+              height="25px" />
+          </i>
+        </span>
+      </a>
+    </div>
+  </div>
+  
     <footer>
         <div class="footer-kiri">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid"
+                width="350"
+                height="350"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-
         <div class="footer-kanan">
             <h1>Lokasi Kami</h1>
             <p>Surakarta</p>
-            <p>Jl. Jend. Urip Sumoharjo, Purwodiningratan, Jebres, Kota Surakarta</p>
-            <p>+62 822-1114-5400</p>
+            <p>
+                Jl. Jend. Urip Sumoharjo, Purwodiningratan, Jebres, Kota Surakarta
+            </p>
             <div class="sosmed">
-                <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                    <img src="{% static 'white-ig.png' %}" alt="">
-                    <span>@klinikakuntansipajak</span>
-                </a>
-            </div>
+                <ul>
+                <li>
+                    <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                        <img src="{% static 'white-ig.png' %}" alt="" />
+                        <span>@klinikakuntansipajak</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                        <img src="{% static 'wa-white.png' %}" alt="" />
+                        <span>+62 822-1114-5400</span>
+                    </a>
+                </li>
+                </ul>
+        </div>
         </div>
     </footer>
     <div class="copy">

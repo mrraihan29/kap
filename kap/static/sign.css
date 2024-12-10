@@ -132,6 +132,24 @@ input[type="submit"]:hover {
   transition: 0.2s;
 }
 
+.helptext {
+  font-size: 14px; /* Atur ukuran font sesuai kebutuhan */
+  color: #f3f7ff; /* Atur warna font sesuai kebutuhan */
+  margin-top: -10px; /* Atur margin sesuai kebutuhan */
+  font-weight: 400;
+}
+.helptext ul {
+  padding-left: 20px; /* Tambahkan padding kiri untuk indentasi */
+  margin-top: 10px; /* Tambahkan margin atas untuk jarak dari teks sebelumnya */
+  list-style-type: disc; /* Gunakan bullet points */
+}
+
+.helptext ul li {
+  margin-bottom: 5px; /* Tambahkan margin bawah untuk jarak antar item */
+  font-size: 14px; /* Atur ukuran font sesuai kebutuhan */
+  color: #f3f7ff; /* Atur warna font sesuai kebutuhan */
+  font-weight: 400; /* Atur ketebalan font sesuai kebutuhan */
+}
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {

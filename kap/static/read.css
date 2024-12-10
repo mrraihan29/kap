@@ -376,31 +376,29 @@ header nav img{
 /* END BODY CSS */
 
 /* START FOOTER CSS */
-footer{
-  margin-top: 50px;
+footer {
   display: flex;
   flex-direction: row;
   column-gap: 50px;
-  background-color: #316CF4;
+  background-color: #316cf4;
   color: white;
-  height:400px ;
+  height: 400px;
 }
 
-.footer-kiri{
+.footer-kiri {
   display: flex;
   align-items: center;
   flex: 1;
   width: 200px;
 }
 
-.footer-kiri iframe{
+.footer-kiri iframe {
   width: 750px;
   height: 340px;
   border: 0;
 }
 
-
-.footer-kanan{
+.footer-kanan {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -412,11 +410,9 @@ footer{
   margin-bottom: 10px;
 }
 
-
 .footer-kanan p:nth-child(2) {
   font-size: 30px;
 }
-
 
 .footer-kanan p:nth-child(3) {
   font-size: 20px;
@@ -431,25 +427,30 @@ footer{
   display: flex;
   align-items: center;
 }
+.sosmed ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-.sosmed a {
+.sosmed ul li {
+  display: flex;
+  align-items: center;
+}
+
+.sosmed ul li a {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: white;
-  justify-content: center;
 }
 
-.sosmed img {
+.sosmed ul li img {
   height: 30px;
   margin-right: 10px;
-}
-
-.sosmed span {
-  font-size: 18px;
-  color: white;
-  font-weight: 600;
-
 }
 
 .copy{
