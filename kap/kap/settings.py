@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-r@abrgtv^36*-c0t16f1-#fis36(1y6nv#%j*44mc3v)ma$f(i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.klinikakuntansipajak.id', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -127,7 +128,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS =[
     BASE_DIR/"static"
 ]
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
