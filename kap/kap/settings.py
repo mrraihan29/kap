@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-r@abrgtv^36*-c0t16f1-#fis36(1y6nv#%j*44mc3v)ma$f(i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.klinikakuntansipajak.id', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 
 
