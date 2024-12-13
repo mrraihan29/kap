@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,20 @@ SECRET_KEY = 'django-insecure-r@abrgtv^36*-c0t16f1-#fis36(1y6nv#%j*44mc3v)ma$f(i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["www.klinikakuntansipajak.id", "klinikakuntansipajak.id", "localhost"]
+_http_site_url = os.getenv("SITE_URL", "localhost")
+_site_url = _http_site_url.split('//')[1]
+_protocol = _http_site_url.split('//')[0]+"//"
+
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", _site_url, "wwww."+_site_url]
+
+print(ALLOWED_HOSTS)
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:5173",
+    _http_site_url,
+    _protocol+"wwww."+_http_site_url
+]
 
 
 
@@ -77,16 +94,30 @@ WSGI_APPLICATION = 'kap.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kap',
-        'USER': 'postgres',
-        'PASSWORD': 'obatnyamuk',
-        'HOST': 'localhost',
-        'PORT': '5432',
+db_engine = os.getenv("DB_ENGINE", "django.db.backends.sqlite3")
+
+if db_engine == "django.db.backends.sqlite3":
+    DATABASES = {
+        "default": {
+            "ENGINE": db_engine,
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+else:
+    # Database Postgres
+    DATABASES = {
+        "default": {
+            "ENGINE": db_engine,
+            "NAME": os.getenv("DB_DATABASE"),
+            "USER": os.getenv("DB_USER"),
+            "PASSWORD": os.getenv("DB_PASSWORD"),
+            "HOST": os.getenv("DB_HOST"),
+            "PORT": os.getenv("DB_PORT", "5432"),
+            "OPTIONS": {
+                "sslmode": os.getenv('disabled') ,
+            },
+        }
+    }
 
 # DATABASES = {
 #     'default': {
