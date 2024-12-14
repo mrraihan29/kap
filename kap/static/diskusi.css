@@ -270,6 +270,10 @@ header nav img {
   overflow: hidden;
 }
 
+.popup-logout.active {
+  display: block;
+}
+
 .popup-header {
   display: flex;
   justify-content: space-between;
