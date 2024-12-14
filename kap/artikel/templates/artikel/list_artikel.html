@@ -46,7 +46,10 @@
         <div class="popup-content">
           <p>Username: {{ user.username }}</p>
           <p>Email: {{ user.email }}</p>
-          <a href="{% url 'account:logout' %}" class="logout-button">Logout</a>
+          <form method="post" id="logout-form" action="{% url 'account:logout' %}">
+                    {% csrf_token %}
+                    <a href="javascript:{}" onclick="document.getElementById('logout-form').submit();" class="logout-button">Logout</a>
+                </form>
         </div>
       </div>
       <script>

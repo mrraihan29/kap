@@ -28,16 +28,55 @@
             </div>
             <div class="sign-container">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'account:logout' %}" id="username">{{ user.username }}</a>
+                    <h1 id="username">{{ user.username }}</h1>
                 {% else %}
                     <a href="{% url 'account:login' %}">
-                        <img src="{% static 'user-blue.png' %}" alt="" class="default-img">
-                        <img src="{% static 'user-yellow.png' %}" alt="" class="hover-img">
+                        <img src="{%static "user-blue.png"%}" alt="" class="default-img">
+                        <img src="{%static "user-yellow.png"%}" alt="" class="hover-img">
                         <span>Sign In</span>
                     </a>
                 {% endif %}
             </div>
         </nav>
+        <div id="popup-logout" class="popup-logout">
+            <div class="popup-header">
+                <h2>Dashboard</h2>
+                <span id="closePopup-logout" class="popup-close">&times;</span>
+            </div>
+            <div class="popup-logout-content">
+                <p>Username: {{ user.username }}</p>
+                <p>Email: {{ user.email }}</p>
+                <form method="post" id="logout-form" action="{% url 'account:logout' %}">
+                    {% csrf_token %}
+                    <a href="javascript:{}" onclick="document.getElementById('logout-form').submit();" class="logout-button">Logout</a>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const usernameElement = document.getElementById('username');
+                const popup = document.getElementById('popup-logout');
+                const closePopup = document.getElementById('closePopup-logout');
+                
+                if (usernameElement) {
+                    usernameElement.onclick = function() {
+                        popup.classList.add('active');
+                    };
+                }
+
+                if (closePopup) {
+                    closePopup.onclick = function() {
+                        popup.classList.remove('active');
+                    };
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == popup) {
+                        popup.classList.remove('active');
+                    }
+                }
+            });
+        </script> 
     </header>
 
     <section class="discuss-container">
