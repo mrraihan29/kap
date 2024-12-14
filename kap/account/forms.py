@@ -55,11 +55,9 @@ class SignUpForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
         max_length=100, 
-        label='Nama Pengguna',
-        help_text='Masukkan nama pengguna Anda.'
+        label='Nama Pengguna'
     )
     password = forms.CharField(
         widget=forms.PasswordInput(),
-        label='Kata Sandi',
-        help_text='Masukkan kata sandi Anda.'
+        label='Kata Sandi'
     )
