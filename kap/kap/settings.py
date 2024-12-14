@@ -32,6 +32,8 @@ DEBUG = True
 _http_site_url = os.getenv("SITE_URL", "localhost")
 _site_url = _http_site_url.split('//')[1]
 _protocol = _http_site_url.split('//')[0]+"//"
+if _site_url.endswith('/'):
+    _site_url = _site_url[:-1]
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", _site_url, "wwww."+_site_url]
 
