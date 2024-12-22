@@ -29,9 +29,6 @@ SECRET_KEY = 'django-insecure-r@abrgtv^36*-c0t16f1-#fis36(1y6nv#%j*44mc3v)ma$f(i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = [".klinikakuntansi.id", "http://127.0.0.1:8000/","127.0.0.1"]
-=======
 _http_site_url = os.getenv("SITE_URL", "localhost")
 _site_url = _http_site_url.split('//')[1]
 _protocol = _http_site_url.split('//')[0]+"//"
@@ -48,7 +45,6 @@ CSRF_TRUSTED_ORIGINS = [
     _http_site_url,
     _protocol+"wwww."+_http_site_url
 ]
->>>>>>> 731753f9b095f854067933a2420516b1943a94e5
 
 
 
