@@ -253,11 +253,10 @@ header nav img {
   font-size: 20px;
   color: #3f51b5;
   font-weight: bold;
-  font-style: italic;
   padding-right: 40px;
 }
 
-.popup {
+.popup-logout {
   display: none;
   position: fixed;
   top: 50%;
@@ -271,7 +270,7 @@ header nav img {
   overflow: hidden;
 }
 
-.popup.active {
+.popup-logout.active {
   display: block;
 }
 
@@ -289,7 +288,7 @@ header nav img {
   font-size: 20px;
 }
 
-.popup-content {
+.popup-logout-content {
   padding: 20px;
 }
 

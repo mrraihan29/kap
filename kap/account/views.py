@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import SignUpForm
+from .forms import SignUpForm, LoginForm
 from .models import CustomUser
 
 def signup_view(request):
@@ -19,7 +19,7 @@ def signup_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
+        form = LoginForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -28,7 +28,7 @@ def login_view(request):
                 login(request, user)
                 return redirect('home')
     else:
-        form = AuthenticationForm()
+        form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
 def home(request):
