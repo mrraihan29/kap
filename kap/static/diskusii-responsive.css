@@ -1,0 +1,298 @@
+/* Extra Small Screens (Mobile) */
+@media only screen and (max-width: 576px) {
+  /* CSS rules specific for extra small screens */
+  nav {
+    padding: 20px 20px;
+  }
+
+  .logo-container h1 {
+    display: none;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    display: flex;
+    column-gap: 30px;
+    width: 100%;
+  }
+
+  .nav-menu ul li a {
+    font-size: 16px;
+  }
+
+  .logo-container img {
+    width: 50px;
+  }
+
+  .addDiskusi {
+    width: 80%;
+    margin-left: 25px;
+  }
+
+  .addkiri h1 {
+    font-size: 20px;
+  }
+
+  .addkiri select,
+  .addkiri button {
+    font-size: 14px;
+  }
+
+  .discuss-title h1 {
+    font-size: 150px;
+    width: auto;
+  }
+
+  .timestamp {
+    font-size: 18px;
+  }
+
+  .discuss-content {
+    font-size: 16px;
+  }
+
+  .filter-select {
+    font-size: 16px;
+    width: 200px;
+  }
+
+  .filter button {
+    width: 80px;
+  }
+
+  .card-container {
+    width: 80%;
+  }
+
+  .user-name {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .popup-category {
+    font-size: 18px;
+    background-color: aqua;
+  }
+
+  .footer-kiri {
+    display: none;
+  }
+
+  .footer-kiri iframe {
+    width: 10%;
+    height: 10%;
+  }
+
+  .footer-kanan {
+    padding: 100px 70px;
+    justify-content: center;
+  }
+
+  .footer-kanan h1 {
+    font-size: 40px;
+  }
+  .footer-kanan p {
+    font-size: 20px;
+  }
+  .location {
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .location a {
+    font-size: 18px;
+  }
+
+  .sosmed {
+    padding-top: 0px;
+  }
+
+  .sosmed ul li a span {
+    font-size: 18px;
+  }
+}
+
+/* Small Screens (Tablets) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  /* CSS rules specific for small screens */
+  nav {
+    padding: 20px 20px;
+  }
+
+  .logo-container h1 {
+    display: none;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    display: flex;
+    column-gap: 50px;
+    width: 100%;
+  }
+
+  .nav-menu ul li a {
+    font-size: 18px;
+  }
+
+  .addDiskusi {
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .addkiri h1 {
+    font-size: 26px;
+  }
+
+  .addkiri select,
+  .addkiri button {
+    font-size: 14px;
+  }
+
+  .discuss-title h1 {
+    font-size: 100px;
+    width: auto;
+  }
+
+  .timestamp {
+    font-size: 12px;
+  }
+
+  .discuss-content {
+    font-size: 13px;
+  }
+
+  .filter-select {
+    font-size: 14px;
+  }
+
+  .card-container {
+    width: 40%;
+  }
+
+  .user-name {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  footer {
+    column-gap: 0px;
+  }
+
+  .footer-kiri {
+    /* width: 50%; */
+    display: none;
+  }
+
+  .footer-kanan {
+    padding: 80px 40px;
+    justify-content: center;
+  }
+
+  .footer-kanan h1 {
+    font-size: 40px;
+  }
+  .footer-kanan p {
+    font-size: 20px;
+  }
+
+  .location {
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .location a {
+    font-size: 18px;
+  }
+
+  .sosmed {
+    padding-top: 0px;
+  }
+
+  .sosmed ul li a span {
+    font-size: 18px;
+  }
+}
+
+/* Medium Screens (Large Tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS rules specific for medium screens */
+  nav {
+    padding: 20px 50px;
+  }
+
+  .logo-container {
+    font-size: 20px;
+  }
+  .logo-container h1 {
+    display: none;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    display: flex;
+    column-gap: 100px;
+    width: 100%;
+  }
+
+  .nav-menu ul li a {
+    font-size: 20px;
+  }
+
+  .addDiskusi {
+    width: 100%;
+    margin-left: -20px;
+  }
+
+  .addkiri h1 {
+    font-size: 32px;
+  }
+
+  .addkiri select,
+  .addkiri button {
+    font-size: 16px;
+  }
+
+  .discuss-title h1 {
+    font-size: 100px;
+    width: auto;
+  }
+
+  .timestamp {
+    font-size: 12px;
+  }
+
+  .discuss-content {
+    font-size: 13px;
+  }
+
+  footer {
+    column-gap: 10px;
+    background-color: aqua;
+  }
+
+  .footer-kiri {
+    width: 60%;
+  }
+
+  .footer-kanan {
+    padding: 60px 15px;
+  }
+
+  .footer-kanan h1 {
+    font-size: 40px;
+  }
+  .footer-kanan p {
+    font-size: 20px;
+  }
+
+  .location a {
+    font-size: 18px;
+  }
+
+  .sosmed {
+    padding-top: 0px;
+  }
+
+  .sosmed ul li a span {
+    font-size: 18px;
+  }
+}

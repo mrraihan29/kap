@@ -122,7 +122,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Lora:ital,wght@0,400..700;1,400..700&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rammetto+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* START CSS */
 
 header {
   height: auto;
@@ -130,23 +131,22 @@ header {
   background-color: #f3f7ff;
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
 }
 
 body {
-  font-family: "Russo One", sans-serif;
+  font-family: "Montserrat", serif;
   background-color: #f3f7ff;
 }
 
-nav{
+nav {
   padding: 20px 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
-.nav-menu ul{
+.nav-menu ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -155,28 +155,27 @@ nav{
   position: relative;
 }
 
-.nav-menu ul li{
+.nav-menu ul li {
   position: relative;
 }
 
-.nav-menu ul li a{
+.nav-menu ul li a {
   text-decoration: none;
   color: black;
   transition: color 0.3s ease; /*tambahan*/
   position: relative;
 }
 
-
-.nav-menu ul li a:hover{
+.nav-menu ul li a:hover {
   color: #007bff;
 }
 
 .nav-menu ul li a::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #FABC3F;
+  background: #fabc3f;
   transition: width 0.3s ease;
   position: absolute;
   bottom: -5px;
@@ -195,7 +194,7 @@ nav{
   font-weight: 600;
 }
 
-.logo-container h1{
+.logo-container h1 {
   margin-left: 15px;
 }
 
@@ -204,14 +203,14 @@ header nav img {
   width: 60px;
 }
 
-.sign-container{
+.sign-container {
   display: flex;
   align-items: center;
   justify-content: center;
   /*width: 90px;*/
 }
 
-.sign-container a{
+.sign-container a {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -219,11 +218,11 @@ header nav img {
   font-weight: bold;
 }
 
-.sign-container a:hover{
+.sign-container a:hover {
   color: #007bff;
 }
 
-.sign-container img{
+.sign-container img {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -248,14 +247,13 @@ header nav img {
   font-size: 16px;
 }
 
-.sign-container h1{
+.sign-container h1 {
   font-size: 20px;
   color: #3f51b5;
   font-weight: bold;
   font-style: italic;
   padding-right: 40px;
 }
-
 
 .close-btn {
   margin-top: 3px;
@@ -274,18 +272,18 @@ header nav img {
 }
 
 .discuss {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   line-height: 1.5;
 }
 
 .author {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   font-weight: 500;
 }
 
 .popup-category {
   font-size: 12px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   font-weight: 500;
   background-color: #fabc3f;
   color: black;
@@ -293,11 +291,16 @@ header nav img {
   border-radius: 5px;
   width: fit-content;
 }
+@media only screen and (max-width: 576px) {
+  .popup-category {
+    font-size: 6px;
+  }
+}
 
 .popup-timestamp {
   font-size: 12px;
   margin-right: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   font-weight: 500;
   background-color: #2b4365;
   color: white;
@@ -324,7 +327,7 @@ header nav img {
 .comment-form textarea {
   height: 100px;
   width: 95%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   font-size: 1rem;
   padding: 10px;
   margin-bottom: 10px;
@@ -333,7 +336,7 @@ header nav img {
 }
 
 .comment-form button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   font-size: 1rem;
   padding: 5px;
   background-color: #2b4365;
@@ -353,7 +356,7 @@ header nav img {
 }
 
 .author-comment {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   font-weight: 500;
   display: flex;
   flex-direction: row;
@@ -390,7 +393,7 @@ header nav img {
 .comment-content {
   height: auto;
   padding: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", serif;
   text-align: justify;
   line-height: 1.5;
 }

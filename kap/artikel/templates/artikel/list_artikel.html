@@ -5,14 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artikel Berita</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link
       rel="shortcut icon"
       type="img/png"
       href="{% static 'nw-logo.png' %}" />
-    <link rel="stylesheet" href="{%static "artikel.css"%}">
+    <link rel="stylesheet" href="{%static "artikell.css"%}">
   </head>
 
-  <body>
+  <body class="preload">
     <header>
       <nav>
         <div class="logo-container">
@@ -38,6 +39,7 @@
           {% endif %}
         </div>
       </nav>
+
       <div id="popup" class="popup">
         <div class="popup-header">
           <h2>Dashboard</h2>
@@ -74,6 +76,7 @@
           };
         });
       </script>
+
       <section class="fadeinup">
         <section class="wrapper">
           <div class="slider-container">

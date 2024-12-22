@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discuss Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="shortcut icon" type="img/png" href="{% static "img/turn.png" %}">
-    <link rel="stylesheet" href="{% static "diskusi.css" %}">
+    <link rel="stylesheet" href="{% static "diskusii.css" %}">
+    {% comment %} <link rel="stylesheet" href="{% static "comment.css" %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "diskusi-responsive.css" %}">
+    <link rel="stylesheet" href="{% static "diskusii.css" %}">
     <link rel="stylesheet" href="{% static "popup.css" %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Lora:ital,wght@0,400..700;1,400..700&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rammetto+One&display=swap" rel="stylesheet">
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> {% endcomment %}
+    {% comment %} <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Lora:ital,wght@0,400..700;1,400..700&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rammetto+One&display=swap" rel="stylesheet"> {% endcomment %}
 </head>
 <body>
     <header>
@@ -85,7 +89,7 @@
 
                 <div class="discuss-footer">
                     <div class="user">
-                        <div class="user-name">{{ discussion.user }}</div>
+                        <div class="user-name" id="user-name">{{ discussion.user }}</div>
                     </div>
                     <div class="category">{{ discussion.get_category_display }}</div>
                 </div>
@@ -172,7 +176,7 @@
                 </li>
                 </ul>
         </div>
-        </div>
+        
     </footer>
     <div class="copy">
         <p>Universitas Sebelas Maret</p>
@@ -201,6 +205,15 @@
             var content = contentElement.textContent;
             if (content.length > 180) {
                 var truncatedContent = content.substring(0, 180) + '....';
+                contentElement.textContent = truncatedContent;
+            }
+        });
+
+        var contentElements = document.getElementsByClassName('user-name');
+        Array.prototype.forEach.call(contentElements, function(contentElement) {
+            var content = contentElement.textContent;
+            if (content.length > 10) {
+                var truncatedContent = content.substring(0, 10) + '....';
                 contentElement.textContent = truncatedContent;
             }
         });
