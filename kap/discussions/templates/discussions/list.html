@@ -56,31 +56,6 @@
                 </form>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const usernameElement = document.getElementById('username');
-                const popup = document.getElementById('popup-logout');
-                const closePopup = document.getElementById('closePopup-logout');
-                
-                if (usernameElement) {
-                    usernameElement.onclick = function() {
-                        popup.classList.add('active');
-                    };
-                }
-
-                if (closePopup) {
-                    closePopup.onclick = function() {
-                        popup.classList.remove('active');
-                    };
-                }
-
-                window.onclick = function(event) {
-                    if (event.target == popup) {
-                        popup.classList.remove('active');
-                    }
-                }
-            });
-        </script> 
     </header>
 
     <section class="discuss-container">
@@ -255,6 +230,54 @@
                 var truncatedContent = content.substring(0, 10) + '....';
                 contentElement.textContent = truncatedContent;
             }
+        });
+
+        {% comment %} document.addEventListener("DOMContentLoaded", function () {
+            const usernameElement = document.getElementById("username");
+            const popup = document.getElementById("popup");
+            const closePopup = document.getElementById("closePopup");
+
+            if (usernameElement) {
+            usernameElement.onclick = function () {
+                popup.classList.add("active");
+            };
+            }
+
+            if (closePopup) {
+            closePopup.onclick = function () {
+                popup.classList.remove("active");
+            };
+            }
+
+            window.onclick = function (event) {
+            if (event.target == popup) {
+                popup.classList.remove("active");
+            }
+            };
+        }); {% endcomment %}
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const usernameElement = document.getElementById("username");
+            const popup = document.getElementById("popup-logout");
+            const closePopup = document.getElementById("closePopup-logout");
+
+            if (usernameElement) {
+                usernameElement.onclick = function () {
+                    popup.classList.add("active");
+                };
+            }
+
+            if (closePopup) {
+                closePopup.onclick = function () {
+                    popup.classList.remove("active");
+                };
+            }
+
+            window.onclick = function (event) {
+                if (event.target == popup) {
+                    popup.classList.remove("active");
+                }
+            };
         });
     </script>
 </body>
