@@ -48,10 +48,18 @@
         <div class="popup-content">
           <p>Username: {{ user.username }}</p>
           <p>Email: {{ user.email }}</p>
-          <form method="post" id="logout-form" action="{% url 'account:logout' %}">
-                    {% csrf_token %}
-                    <a href="javascript:{}" onclick="document.getElementById('logout-form').submit();" class="logout-button">Logout</a>
-                </form>
+          <form
+            method="post"
+            id="logout-form"
+            action="{% url 'account:logout' %}">
+            {% csrf_token %}
+            <a
+              href="javascript:{}"
+              onclick="document.getElementById('logout-form').submit();"
+              class="logout-button"
+              >Logout</a
+            >
+          </form>
         </div>
       </div>
       <script>
@@ -85,24 +93,24 @@
           <div class="slider-container">
             <div class="slider">
               <div class="slide">
-                <img src="{% static 'opening1.JPG' %}" alt="Image 1" />
+                <img src="{% static 'artikel1.png' %}" alt="Image 1" />
                 <div class="slide-text">
-                  <h3>Judul Artikel 1</h3>
-                  <p>Deskripsi singkat artikel 1</p>
+                  <h3>
+                    KENAIKAN TARIF PPN DARI 11% MENJADI 12% YANG AKAN BERLAKU
+                    PADA JANUARI 2025
+                  </h3>
                 </div>
               </div>
               <div class="slide">
-                <img src="{% static 'opening2.jpg' %}" alt="Image 2" />
+                <img src="{% static 'artikel.jpg' %}" alt="Image 2" />
                 <div class="slide-text">
-                  <h3>Judul Artikel 2</h3>
-                  <p>Deskripsi singkat artikel 2</p>
+                  <h3>PENERAPAN PPH 21 TER</h3>
                 </div>
               </div>
               <div class="slide">
-                <img src="{% static 'opening3.JPG' %}" alt="Image 3" />
+                <img src="{% static 'artikel3.jpeg' %}" alt="Image 3" />
                 <div class="slide-text">
-                  <h3>Judul Artikel 3</h3>
-                  <p>Deskripsi singkat artikel 3</p>
+                  <h3>SPT TAHUNAN</h3>
                 </div>
               </div>
             </div>
@@ -118,80 +126,76 @@
     <div class="article-content">
       <div class="card1">
         <a href="{% url 'artikel_detail' artikel_id=1 %}">
-          <img src="{%static "opening1.JPG"%}" alt="">
+          <img src="{%static "artikel1.png"%}" alt="">
           <div class="isi-atas">
-            <h3>Klinik dan <br />Akuntansi Pajak</h3>
-            <p>17 Sep 2024</p>
+            <h3>
+              KENAIKAN TARIF <br />
+              PPN MENJADI 12%
+            </h3>
+            <p>23 Des 2024</p>
           </div>
-          <h4>
-            Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
-            Tax Center UNS
-          </h4>
+          <h4>Dampak kenaikan PPN terhadap ekonomi Indonesia.</h4>
         </a>
       </div>
 
       <div class="card2">
         <a href="{% url 'artikel_detail' artikel_id=2 %}">
-          <img src="{%static "opening1.JPG"%}" alt="">
+          <img src="{%static "artikel2.jpg"%}" alt="">
           <div class="isi-atas">
-            <h3>Penandatangan<br />MOUS UNS x DJP</h3>
-            <p>17 Sep 2024</p>
+            <h3>PENERAPAN PPH <br />21 TER</h3>
+            <p>23 Des 2024</p>
           </div>
           <h4>
-            Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
-            Tax Center UNS
+            Perubahan PPh 21 menggunakan skema TER untuk pemotongan pajak.
           </h4>
         </a>
       </div>
 
       <div class="card1">
         <a href="{% url 'artikel_detail' artikel_id=3 %}">
-          <img src="{%static "opening1.JPG"%}" alt="">
+          <img src="{%static "artikel3.jpeg"%}" alt="">
           <div class="isi-atas">
-            <h3>Klinik dan <br />Akuntansi Pajak</h3>
-            <p>17 Sep 2024</p>
+            <h3>SPT TAHUNAN</h3>
+            <p>23 Des 2024</p>
           </div>
           <h4>
-            Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
-            Tax Center UNS
+            Pentingnya pelaporan SPT Tahunan dan sanksi jika tidak sesuai.
           </h4>
         </a>
       </div>
 
       <div class="card2">
         <a href="{% url 'artikel_detail' artikel_id=4 %}">
-          <img src="{%static "opening1.JPG"%}" alt="">
+          <img src="{%static "artikel4.jpg"%}" alt="">
           <div class="isi-atas">
-            <h3>Penandatangan<br />MOUS UNS x DJP</h3>
-            <p>17 Sep 2024</p>
+            <h3>PPN WAJIB PUNGUT<br />BENDAHARAWAN NEGARA</h3>
+            <p>23 Des 2024</p>
           </div>
           <h4>
-            Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
-            Tax Center UNS
+            Peran Bendaharawan Pemerintah sebagai Wajib Pungut (Wapu) dalam
+            sistem PPN.
           </h4>
         </a>
       </div>
 
       <div class="card1">
         <a href="{% url 'artikel_detail' artikel_id=5 %}">
-          <img src="{%static "opening1.JPG"%}" alt="">
+          <img src="{%static "artikel5.jpg"%}" alt="">
           <div class="isi-atas">
-            <h3>Klinik dan <br />Akuntansi Pajak</h3>
-            <p>17 Sep 2024</p>
+            <h3>PERBEDAAN PPh 26</h3>
+            <p>23 Des 2024</p>
           </div>
-          <h4>
-            Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
-            Tax Center UNS
-          </h4>
+          <h4>Perbedaan dan subjek pajak PPh 21 dan PPh 26.</h4>
         </a>
       </div>
 
+      {% comment %}
       <div class="card2">
         <a href="{% url 'artikel_detail' artikel_id=6 %}">
           <img src="{%static "opening1.JPG"%}" alt="">
           <div class="isi-atas">
             <h3>Penandatangan<br />MOUS UNS x DJP</h3>
-            <p>17 Sep 2024</p>
+            <p>23 Des 2024</p>
           </div>
           <h4>
             Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
@@ -199,6 +203,7 @@
           </h4>
         </a>
       </div>
+      {% endcomment %}
     </div>
 
     <link

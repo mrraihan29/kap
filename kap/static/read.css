@@ -1,49 +1,130 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /* START CSS */
 
 /* START HEADER CSS */
@@ -83,7 +164,6 @@ table {
   padding: 20px;
 }
 
-
 .logout-button {
   display: block;
   text-align: center;
@@ -95,7 +175,7 @@ table {
   border-radius: 5px;
 }
 
-header{
+header {
   height: auto;
   width: 100%;
   background-color: #f3f7ff;
@@ -104,10 +184,9 @@ header{
   font-family: "Montserrat", sans-serif;
 }
 
-body{
+body {
   font-family: "Montserrat", sans-serif;
   background-color: #f3f7ff;
-
 }
 
 nav {
@@ -169,7 +248,7 @@ nav {
   margin-left: 15px;
 }
 
-header nav img{
+header nav img {
   height: 60px;
   width: 60px;
 }
@@ -219,7 +298,7 @@ header nav img{
 }
 
 .sign-container h1 {
-  font-size: 30px;
+  font-size: 20px;
   color: #3f51b5;
   font-weight: bold;
   padding-right: 40px;
@@ -229,13 +308,13 @@ header nav img{
 
 /* START BODY CSS */
 
-.back-button{
+.back-button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.back-button a{
+.back-button a {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -243,37 +322,34 @@ header nav img{
   font-weight: bold;
 }
 
-.back-button a:hover{
+.back-button a:hover {
   color: #007bff;
 }
 
-.back-button img{
+.back-button img {
   display: inline-block;
   width: 50px;
   height: 50px;
   transition: transform 0.3s;
 }
 
-
-
-.back-button .hover-button{
+.back-button .hover-button {
   display: none;
 }
 
-.back-button a:hover .default-button{
+.back-button a:hover .default-button {
   display: none;
 }
 
-.back-button a:hover .hover-button{
+.back-button a:hover .hover-button {
   display: inline-block;
   transform: scale(1.1);
 }
 
-.back-button span{
+.back-button span {
   font-size: 24px;
   padding-left: 10px;
 }
-
 
 /*.button-back button{
   background-color: #316CF4;
@@ -295,62 +371,62 @@ header nav img{
 } */
 
 .container-read {
-  padding-left:200px;
-  padding-right:200px;
+  padding-left: 200px;
+  padding-right: 200px;
   padding-top: 50px;
 }
 
-.title-container{
+.title-container {
   padding: 20px 50px;
   display: flex;
   flex-direction: column;
 }
 
-.title-container p{
+.title-container p {
   font-size: 24px;
   padding-top: 10px;
   color: #747474;
 }
 
-.judul{
+.judul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.judul h1{
+.judul h1 {
   font-size: 30px;
   color: #222222;
   font-weight: 700;
 }
 
-.judul h2{
+.judul h2 {
   font-size: 14px;
-  background-color: #134B70;
+  background-color: #134b70;
   padding: 10px;
   color: #f3f7ff;
   border-radius: 10px;
 }
 
-.author{
+.author {
   margin-top: 40px;
   display: flex;
   align-items: center;
   column-gap: 20px;
 }
 
-.author img{
+.author img {
   width: 50px;
   height: 50px;
 }
 
-.author h2{
+.author h2 {
   font-size: 20px;
   font-weight: 500;
 }
 
-.artc-read{
+.artc-read {
   padding: 20px 50px;
   display: flex;
   flex-direction: column;
@@ -358,18 +434,17 @@ header nav img{
   align-items: center;
 }
 
-.artc-read img{
+.artc-read img {
   width: 100%;
 }
 
-.artc-read p{
+.artc-read p {
   padding-top: 40px;
   font-size: 20px;
   text-align: justify;
   line-height: 1.5;
   font-weight: 400;
 }
-
 
 /* END BODY CSS */
 
@@ -409,20 +484,19 @@ footer {
   margin-bottom: 10px;
 }
 
-.footer-kanan p{
+.footer-kanan p {
   font-size: 30px;
 }
 
-.location{
+.location {
   width: 80%;
 }
 
-.location a{
+.location a {
   font-size: 20px;
   text-decoration: none;
   color: #f3f7ff;
 }
-
 
 .sosmed {
   padding-top: 40px;
@@ -466,29 +540,29 @@ footer {
 
 /* END CSS */
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #fabc3f #f3f7ff;
-  }
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fabc3f #f3f7ff;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 30px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 30px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #f3f7ff;
-  }
+*::-webkit-scrollbar-track {
+  background: #f3f7ff;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #fabc3f;
-    border-radius: 100px;
-    border: 4px solid #f3f7ff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #fabc3f;
+  border-radius: 100px;
+  border: 4px solid #f3f7ff;
+}
 
-@media only screen and (max-width: 576px){
-  header{
+@media only screen and (max-width: 576px) {
+  header {
     height: 100%;
   }
   nav {
@@ -514,88 +588,83 @@ footer {
     width: 50px;
   }
 
-  .container-read{
+  .container-read {
     padding: 0px;
   }
 
-  .judul h1{
+  .judul h1 {
     font-size: 24px;
   }
 
-  .judul h2{
+  .judul h2 {
     width: 50%;
     display: flex;
     justify-content: center;
   }
 
-  .title-container{
-    padding:0px 50px ;
+  .title-container {
+    padding: 0px 50px;
   }
-  .title-container p{
+  .title-container p {
     font-size: 20px;
   }
 
-  .author{
+  .author {
     column-gap: 10px;
   }
 
-  .author img{
+  .author img {
     width: 35px;
     height: 35px;
   }
 
-  .author h2{
+  .author h2 {
     font-size: 16px;
   }
 
-  .artc-read p{
+  .artc-read p {
     font-size: 16px;
   }
 
-  .footer-kiri{
+  .footer-kiri {
     display: none;
   }
 
-  .footer-kiri iframe{
+  .footer-kiri iframe {
     width: 10%;
     height: 10%;
   }
 
-  .footer-kanan{
+  .footer-kanan {
     padding: 100px 70px;
     justify-content: center;
   }
 
-
-  .footer-kanan h1{
+  .footer-kanan h1 {
     font-size: 40px;
   }
-  .footer-kanan p{
+  .footer-kanan p {
     font-size: 20px;
   }
-  .location{
+  .location {
     padding-bottom: 10px;
     width: 100%;
   }
-  .location a{
+  .location a {
     font-size: 18px;
-  
   }
 
-
-  .sosmed{
+  .sosmed {
     padding-top: 0px;
   }
 
-  .sosmed ul li a span{
+  .sosmed ul li a span {
     font-size: 18px;
   }
-
-  
 }
 
-@media only screen and (min-width: 577px) and (max-width: 768px){
-  header{
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  header {
     height: 100%;
   }
   nav {
@@ -617,84 +686,83 @@ footer {
     font-size: 18px;
   }
 
-  .container-read{
+  .container-read {
     padding: 40px 0px;
   }
 
-  .judul h1{
+  .judul h1 {
     font-size: 26px;
   }
 
-  .judul h2{
+  .judul h2 {
     width: 50%;
     display: flex;
     justify-content: center;
   }
 
-  .title-container{
-    padding:0px 50px ;
+  .title-container {
+    padding: 0px 50px;
   }
-  .title-container p{
+  .title-container p {
     font-size: 22px;
   }
 
-  .author{
+  .author {
     column-gap: 10px;
   }
 
-  .author img{
+  .author img {
     width: 40px;
     height: 40px;
   }
 
-  .author h2{
+  .author h2 {
     font-size: 18px;
   }
 
-  .artc-read p{
+  .artc-read p {
     font-size: 18px;
   }
-  footer{
+  footer {
     column-gap: 0px;
   }
 
-  .footer-kiri{
+  .footer-kiri {
     /* width: 50%; */
     display: none;
   }
 
-  .footer-kanan{
+  .footer-kanan {
     padding: 80px 40px;
     justify-content: center;
   }
 
-  .footer-kanan h1{
+  .footer-kanan h1 {
     font-size: 40px;
   }
-  .footer-kanan p{
+  .footer-kanan p {
     font-size: 20px;
   }
 
-  .location{
+  .location {
     padding-bottom: 10px;
     width: 100%;
   }
 
-  .location a{
+  .location a {
     font-size: 18px;
   }
 
-
-  .sosmed{
+  .sosmed {
     padding-top: 0px;
   }
 
-  .sosmed ul li a span{
+  .sosmed ul li a span {
     font-size: 18px;
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px){
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   nav {
     padding: 20px 50px;
   }
@@ -717,23 +785,20 @@ footer {
     font-size: 20px;
   }
 
-  .container-read{
+  .container-read {
     padding-right: 35px;
     padding-left: 35px;
   }
-
-  
-  
 
   /* .judul h1{
     font-size: 26px;
   } */
 
-  .judul h2{
+  .judul h2 {
     width: 30%;
     display: flex;
     justify-content: center;
-  } 
+  }
 
   /* .title-container{
     padding:0px 50px ;
@@ -758,35 +823,34 @@ footer {
   .artc-read p{
     font-size: 18px;
   } */
-  footer{
+  footer {
     column-gap: 10px;
   }
 
-  .footer-kiri{
+  .footer-kiri {
     width: 60%;
   }
 
-  .footer-kanan{
+  .footer-kanan {
     padding: 60px 15px;
   }
 
-  .footer-kanan h1{
+  .footer-kanan h1 {
     font-size: 40px;
   }
-  .footer-kanan p{
+  .footer-kanan p {
     font-size: 20px;
   }
-  
-  .location a{
+
+  .location a {
     font-size: 18px;
   }
 
-
-  .sosmed{
+  .sosmed {
     padding-top: 0px;
   }
 
-  .sosmed ul li a span{
+  .sosmed ul li a span {
     font-size: 18px;
   }
 }

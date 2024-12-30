@@ -1,194 +1,182 @@
 {%load static%}
-<!DOCTYPE HTML>
-<html lang = "id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{judul}}</title>
-    <link rel="icon" href="{% static 'nw-logo.png' %}" type="image/gif" sizes="16x16">
+    <link
+      rel="icon"
+      href="{% static 'nw-logo.png' %}"
+      type="image/gif"
+      sizes="16x16" />
     <link rel="stylesheet" href="{%static "read.css"%}">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo-container">
-                <img src="{% static 'nw-logo.png' %}" alt="">
-                <h1>Klinik Akuntansi Pajak</h1>
-            </div>
-            <div class="nav-menu">
-                <ul>
-                    <li><a href="/">Beranda</a></li>
-                    <li><a href="/diskusi">Diskusi</a></li>
-                    <li><a href="/artikel">Artikel</a></li>
-                </ul>
-            </div>
-            <div class="sign-container">
-                {% if user.is_authenticated %}
-                    <h1 id="username">{{ user.username }}</h1>
-                {% else %}
-                    <a href="{% url 'account:login' %}">
-                        <img src="{%static "user-blue.png"%}" alt="" class="default-img">
-                        <img src="{%static "user-yellow.png"%}" alt="" class="hover-img">
-                        <span>Sign In</span>
-                    </a>
-                {% endif %}
-            </div>
-        </nav>
-        <div id="popup" class="popup">
-            <div class="popup-header">
-                <h2>Dashboard</h2>
-                <span id="closePopup" class="popup-close">&times;</span>
-            </div>
-            <div class="popup-content">
-                <p>Username: {{ user.username }}</p>
-                <p>Email: {{ user.email }}</p>
-                <form method="post" id="logout-form" action="{% url 'account:logout' %}">
-                    {% csrf_token %}
-                    <a href="javascript:{}" onclick="document.getElementById('logout-form').submit();" class="logout-button">Logout</a>
-                </form>
-            </div>
+      <nav>
+        <div class="logo-container">
+          <img src="{% static 'nw-logo.png' %}" alt="" />
+          <h1>Klinik Akuntansi Pajak</h1>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const usernameElement = document.getElementById('username');
-                const popup = document.getElementById('popup');
-                const closePopup = document.getElementById('closePopup');
-                
-                if (usernameElement) {
-                    usernameElement.onclick = function() {
-                        popup.classList.add('active');
-                    };
-                }
+        <div class="nav-menu">
+          <ul>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/diskusi">Diskusi</a></li>
+            <li><a href="/artikel">Artikel</a></li>
+          </ul>
+        </div>
+        <div class="sign-container">
+          {% if user.is_authenticated %}
+          <h1 id="username">{{ user.username }}</h1>
+          {% else %}
+          <a href="{% url 'account:login' %}">
+            <img src="{%static "user-blue.png"%}" alt="" class="default-img">
+            <img src="{%static "user-yellow.png"%}" alt="" class="hover-img">
+            <span>Sign In</span>
+          </a>
+          {% endif %}
+        </div>
+      </nav>
+      <div id="popup" class="popup">
+        <div class="popup-header">
+          <h2>Dashboard</h2>
+          <span id="closePopup" class="popup-close">&times;</span>
+        </div>
+        <div class="popup-content">
+          <p>Username: {{ user.username }}</p>
+          <p>Email: {{ user.email }}</p>
+          <form
+            method="post"
+            id="logout-form"
+            action="{% url 'account:logout' %}">
+            {% csrf_token %}
+            <a
+              href="javascript:{}"
+              onclick="document.getElementById('logout-form').submit();"
+              class="logout-button"
+              >Logout</a
+            >
+          </form>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const usernameElement = document.getElementById("username");
+          const popup = document.getElementById("popup");
+          const closePopup = document.getElementById("closePopup");
 
-                if (closePopup) {
-                    closePopup.onclick = function() {
-                        popup.classList.remove('active');
-                    };
-                }
+          if (usernameElement) {
+            usernameElement.onclick = function () {
+              popup.classList.add("active");
+            };
+          }
 
-                window.onclick = function(event) {
-                    if (event.target == popup) {
-                        popup.classList.remove('active');
-                    }
-                }
-            });
-        </script> 
+          if (closePopup) {
+            closePopup.onclick = function () {
+              popup.classList.remove("active");
+            };
+          }
+
+          window.onclick = function (event) {
+            if (event.target == popup) {
+              popup.classList.remove("active");
+            }
+          };
+        });
+      </script>
     </header>
 
     <section class="container-read">
-       <!-- <div class="back-button">
+      <!-- <div class="back-button">
             <button onclick="history.back()">
                 <img src="{%static 'back-button.png' %}" alt="Kembali">
                 <span>Kembali</span>
             </button>
         </div> -->
-        <!--<div class="back-button">
+      <!--<div class="back-button">
             <a href="javascript:history.back()">
                 <img src="{% static 'back-button.png' %}" alt="default-button" class="default-button">
                 <img src="{% static 'back-button-a.png' %}" alt="hover-button" class="hover-button">
                 <span>Kembali</span>
             </a>
         </div>-->
-        <section class="title-container">
-            <div class="judul">
-                <h1>{{judul}}</h1>
-                <h2>17 Sep 2024</h2>
-            </div>
-            <p>Kegiatan Rutin Pendampingan konsultasi Akutansi dan Perpajakan di Tax Center UNS</p>
-            <div class="author">
-                <img src="{%static "user-navy.png"%}" alt="">
-                <h2>Mu'ammar </h2>
-            </div>
-        </section>
-        <article class="artc-read">
-            <img src="{%static "opening1.JPG"%}" alt="">          
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Nam luctus sem ullamcorper eros commodo placerat. 
-                Donec vulputate magna quis est tristique, sed tristique enim porta. 
-                Maecenas diam nulla, lobortis at facilisis sed, maximus nec felis. 
-                Nullam magna nunc, pretium at elementum nec, ullamcorper vel felis. 
-                Praesent tellus leo, commodo ac iaculis et, maximus ornare sem. 
-                Morbi lorem arcu, ornare et porta in, ultrices at risus. 
-                Fusce euismod, dui at porttitor pharetra, dolor massa tincidunt justo, eget sodales lacus elit id diam.
-                Quisque euismod erat ut sapien porta commodo. Sed ipsum dui, pulvinar eget cursus ac, tempus quis nibh. 
-                Vestibulum blandit.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Nam luctus sem ullamcorper eros commodo placerat. 
-                Donec vulputate magna quis est tristique, sed tristique enim porta. 
-                Maecenas diam nulla, lobortis at facilisis sed, maximus nec felis. 
-                Nullam magna nunc, pretium at elementum nec, ullamcorper vel felis. 
-                Praesent tellus leo, commodo ac iaculis et, maximus ornare sem. 
-                Morbi lorem arcu, ornare et porta in, ultrices at risus. 
-                Fusce euismod, dui at porttitor pharetra, dolor massa tincidunt justo, eget sodales lacus elit id diam.
-                Quisque euismod erat ut sapien porta commodo. Sed ipsum dui, pulvinar eget cursus ac, tempus quis nibh. 
-                Vestibulum blandit.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Nam luctus sem ullamcorper eros commodo placerat. 
-                Donec vulputate magna quis est tristique, sed tristique enim porta. 
-                Maecenas diam nulla, lobortis at facilisis sed, maximus nec felis. 
-                Nullam magna nunc, pretium at elementum nec, ullamcorper vel felis. 
-                Praesent tellus leo, commodo ac iaculis et, maximus ornare sem. 
-                Morbi lorem arcu, ornare et porta in, ultrices at risus. 
-                Fusce euismod, dui at porttitor pharetra, dolor massa tincidunt justo, eget sodales lacus elit id diam.
-                Quisque euismod erat ut sapien porta commodo. Sed ipsum dui, pulvinar eget cursus ac, tempus quis nibh. 
-                Vestibulum blandit.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Nam luctus sem ullamcorper eros commodo placerat. 
-                Donec vulputate magna quis est tristique, sed tristique enim porta. 
-                Maecenas diam nulla, lobortis at facilisis sed, maximus nec felis. 
-                Nullam magna nunc, pretium at elementum nec, ullamcorper vel felis. 
-                Praesent tellus leo, commodo ac iaculis et, maximus ornare sem. 
-                Morbi lorem arcu, ornare et porta in, ultrices at risus. 
-                Fusce euismod, dui at porttitor pharetra, dolor massa tincidunt justo, eget sodales lacus elit id diam.
-                Quisque euismod erat ut sapien porta commodo. Sed ipsum dui, pulvinar eget cursus ac, tempus quis nibh. 
-                Vestibulum blandit.
-            </p>
-        </article>
+      <section class="title-container">
+        <div class="judul">
+          <h1>{{judul}}</h1>
+          <h2>23 Des 2024</h2>
+        </div>
+        <p>Perubahan PPh 21 menggunakan skema TER untuk pemotongan pajak.</p>
+        <div class="author">
+          <img src="{%static "user-navy.png"%}" alt="">
+          <h2>Klinik Akuntansi Pajak</h2>
+        </div>
+      </section>
+      <article class="artc-read">
+        <img src="{%static "artikel2.jpg"%}" alt=""/>
+        <p>
+          Pemerintah Indonesia telah mengumumkan perubahan peraturan terbaru PPh
+          21 yang menggunakan skema Tarif Efektif Rata-Rata (TER) untuk
+          memudahkan pemotongan Pajak Penghasilan (PPh) Pasal 21. Perubahan ini
+          diatur dalam Peraturan Pemerintah (PP) Nomor 58 Tahun 2023 dan
+          Peraturan Menteri Keuangan (PMK) Nomor 168 Tahun 2023. Perubahan
+          peraturan PPh 21 TER mulai berlaku sejak 1 Januari 2024.
+        </p>
+        <p>
+          PPh 21 adalah pemotongan pajak yang dikenakan pada penghasilan yang
+          diterima oleh wajib pajak pribadi atas pekerjaan, jasa, atau kegiatan
+          lainnya. Skema tarif progresif yang sebelumnya digunakan seringkali
+          rumit dan memerlukan perhitungan yang lebih kompleks. Dengan penerapan
+          skema TER, pemotongan pajak akan lebih sederhana dan efisien.
+        </p>
+        <p>
+          Peraturan terbaru PPh 21 dengan skema TER merupakan langkah positif
+          dari pemerintah untuk memudahkan proses pemotongan pajak dan
+          meningkatkan efisiensi administrasi. Dengan penerapan skema ini,
+          diharapkan wajib pajak dapat lebih mudah memahami dan memenuhi
+          kewajibannya dalam hal pemotongan pajak.
+        </p>
+      </article>
     </section>
     <footer>
-        <div class="footer-kiri">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid"
-                width="350"
-                height="350"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="footer-kiri">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.8917230929515!2d110.8356958882643!3d-7.562879766665172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e1!3m2!1sen!2sid!4v1727590442006!5m2!1sen!2sid"
+          width="350"
+          height="350"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="footer-kanan">
+        <h1>Lokasi Kami</h1>
+        <p>Surakarta</p>
+        <p>
+          Jl. Jend. Urip Sumoharjo, Purwodiningratan, Jebres, Kota Surakarta
+        </p>
+        <div class="sosmed">
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="{% static 'white-ig.png' %}" alt="" />
+                <span>@klinikakuntansipajak</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="{% static 'wa-white.png' %}" alt="" />
+                <span>+62 822-1114-5400</span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="footer-kanan">
-            <h1>Lokasi Kami</h1>
-            <p>Surakarta</p>
-            <p>
-                Jl. Jend. Urip Sumoharjo, Purwodiningratan, Jebres, Kota Surakarta
-            </p>
-            <div class="sosmed">
-                <ul>
-                <li>
-                    <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                        <img src="{% static 'white-ig.png' %}" alt="" />
-                        <span>@klinikakuntansipajak</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                        <img src="{% static 'wa-white.png' %}" alt="" />
-                        <span>+62 822-1114-5400</span>
-                    </a>
-                </li>
-                </ul>
-        </div>
-        </div>
+      </div>
     </footer>
     <div class="copy">
-        <p>Universitas Sebelas Maret</p>
+      <p>Universitas Sebelas Maret</p>
     </div>
-</body>
+  </body>
 </html>
