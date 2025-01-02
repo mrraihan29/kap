@@ -880,6 +880,10 @@ footer {
     width: 50px;
   }
 
+  .article-content {
+    column-gap: 0;
+  }
+
   .footer-kiri {
     display: none;
   }
