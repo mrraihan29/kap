@@ -881,7 +881,7 @@ footer {
   }
 
   .article-content {
-    column-gap: 0;
+    justify-content: center;
   }
 
   .footer-kiri {
