@@ -12,9 +12,11 @@
       sizes="16x16" />
     <title>Klinik Akuntansi Pajak</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
   </head>
 
   <body class="preload">
@@ -45,19 +47,27 @@
       </nav>
 
       <div id="popup" class="popup">
-            <div class="popup-header">
-                <h2>Dashboard</h2>
-                <span id="closePopup" class="popup-close">&times;</span>
-            </div>
-            <div class="popup-content">
-                <p>Username: {{ user.username }}</p>
-                <p>Email: {{ user.email }}</p>
-                <form method="post" id="logout-form" action="{% url 'account:logout' %}">
-                    {% csrf_token %}
-                    <a href="javascript:{}" onclick="document.getElementById('logout-form').submit();" class="logout-button">Logout</a>
-                </form>
-            </div>
+        <div class="popup-header">
+          <h2>Dashboard</h2>
+          <span id="closePopup" class="popup-close">&times;</span>
         </div>
+        <div class="popup-content">
+          <p>Username: {{ user.username }}</p>
+          <p>Email: {{ user.email }}</p>
+          <form
+            method="post"
+            id="logout-form"
+            action="{% url 'account:logout' %}">
+            {% csrf_token %}
+            <a
+              href="javascript:{}"
+              onclick="document.getElementById('logout-form').submit();"
+              class="logout-button"
+              >Logout</a
+            >
+          </form>
+        </div>
+      </div>
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const usernameElement = document.getElementById("username");
@@ -116,11 +126,8 @@
           <div class="hero-img">
             <img src="{% static 'openig1.JPG' %}" alt="" srcset="" />
           </div> -->
-        <!-- </div> --> 
-
+        <!-- </div> -->
       </section>
-      
-  
     </header>
     <!--Gambar Aktivitas -->
     <!-- <section class="slide-container">
@@ -160,7 +167,10 @@
 
     <section class="services">
       <div class="services-text">
-        <h1>Layanan <br> Kami.</h1>
+        <h1>
+          Layanan <br />
+          Kami.
+        </h1>
       </div>
 
       <div class="article-service">
@@ -196,15 +206,15 @@
       <div class="vm-title">
         <h1>Visi & Misi <br />.Kami</h1>
       </div>
-      
+
       <div class="vision">
         <img src="{% static 'petik atas.png' %}" alt="" />
         <div class="vision-text">
           <p>
             Meningkatkan pemahaman akuntansi dan perpajakan pelaku UMKM melalui
             edukasi dan pendampingan profesional, guna memastikan pemenuhan
-            kewajiban perpajakan yang akurat dan sesuai regulasi, serta mendukung
-            tata kelola usaha yang transparan dan berkelanjutan.
+            kewajiban perpajakan yang akurat dan sesuai regulasi, serta
+            mendukung tata kelola usaha yang transparan dan berkelanjutan.
           </p>
         </div>
         <img src="{% static 'petik bawah.png' %}" alt="" />
@@ -250,34 +260,44 @@
       </div>
     </section>
     <div id="popup" class="popup">
-        <div class="popup-content">
-            {% comment %}
-            <span class="close" onclick="closePopup()">&times;</span>
-            {% endcomment %}
-            <div id="popup-body"></div>
-        </div>
+      <div class="popup-content">
+        {% comment %}
+        <span class="close" onclick="closePopup()">&times;</span>
+        {% endcomment %}
+        <div id="popup-body"></div>
+      </div>
     </div>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
     <div class="floating-container">
-        <div class="floating-button">
-            <i class="material-icons">contact_phone</i>
-        </div>
-        <div class="element-container">
-            <a href="https://wa.me/6282211145400">
-                <span class="float-element tooltip-left">
-                    <i class="material-icons">
-                        <img src="{% static 'wa-white.png' %}" alt="" width="25px" height="25px" />
-                    </i>
-                </span>
-            </a>
-            <a href="https://instagram.com/klinikakuntansipajak">
-                <span class="float-element">
-                    <i class="material-icons">
-                        <img src="{% static 'white-ig.png' %}" alt="" width="25px" height="25px" />
-                    </i>
-                </span>
-            </a>
-        </div>
+      <div class="floating-button">
+        <i class="material-icons">contact_phone</i>
+      </div>
+      <div class="element-container">
+        <a href="https://wa.me/6282211145400">
+          <span class="float-element tooltip-left">
+            <i class="material-icons">
+              <img
+                src="{% static 'wa-white.png' %}"
+                alt=""
+                width="25px"
+                height="25px" />
+            </i>
+          </span>
+        </a>
+        <a href="https://instagram.com/klinikakuntansipajak">
+          <span class="float-element">
+            <i class="material-icons">
+              <img
+                src="{% static 'white-ig.png' %}"
+                alt=""
+                width="25px"
+                height="25px" />
+            </i>
+          </span>
+        </a>
+      </div>
     </div>
 
     <footer>
@@ -303,19 +323,19 @@
           </a>
         </div>
 
-        
         <div class="sosmed">
           <ul>
             <li>
-              <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                  <img src="{% static 'white-ig.png' %}" alt="" />
-                  <span>@klinikakuntansipajak</span>
+              <a
+                href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="{% static 'white-ig.png' %}" alt="" />
+                <span>@klinikakuntansipajak</span>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/klinikakuntansipajak?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                  <img src="{% static 'wa-white.png' %}" alt="" />
-                  <span>+62 822-1114-5400</span>
+              <a href="https://wa.me/6282211145400">
+                <img src="{% static 'wa-white.png' %}" alt="" />
+                <span>+62 822-1114-5400</span>
               </a>
             </li>
           </ul>
