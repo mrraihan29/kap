@@ -13,16 +13,19 @@
 
     <div class="discuss">
       <div class="header">
+        <img
+          src="{% static 'person.svg' %}"
+          style="color: #134b70"
+          alt="Person" />
         <div class="author">
-          <img
-            src="{% static 'person.svg' %}"
-            style="color: #134b70"
-            alt="Person" />
           <div>{{ discussion.user }}</div>
+          <div class="popup-category">
+            {{ discussion.get_category_display }}
+          </div>
+          <div class="popup-timestamp">
+            {{ discussion.time_since }} yang lalu
+          </div>
         </div>
-
-        <div class="popup-category">{{ discussion.get_category_display }}</div>
-        <div class="popup-timestamp">{{ discussion.time_since }} yang lalu</div>
       </div>
 
       <div class="content">{{ discussion.content }}</div>

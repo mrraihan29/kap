@@ -276,17 +276,21 @@ header nav img {
 }
 
 .author {
+  border: 3px solid #2b4365;
+  background-color: #fabc3f;
+  border-radius: 10px;
+  padding: 0 2%;
   font-family: "Montserrat", serif;
   font-weight: 500;
 }
 
 .popup-category {
-  font-size: 12px;
+  text-align: left;
+  font-size: 14px;
   font-family: "Montserrat", serif;
   font-weight: 500;
-  background-color: #fabc3f;
+  /* background-color: #fabc3f; */
   color: black;
-  padding: 5px 20px;
   border-radius: 5px;
   width: fit-content;
 }
@@ -297,14 +301,11 @@ header nav img {
 }
 
 .popup-timestamp {
-  font-size: 12px;
+  font-size: 14px;
   margin-right: 10px;
   font-family: "Montserrat", serif;
   font-weight: 500;
-  background-color: #2b4365;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
+  /* background-color: #2b4365; */
 }
 
 .content {

@@ -87,12 +87,11 @@
           };
         });
       </script>
-
       <section class="fadeinup">
         <section class="wrapper">
           <div class="slider-container">
             <div class="slider">
-              <div class="slide">
+              <a href="{% url 'artikel_detail' artikel_id=1 %}" class="slide">
                 <img src="{% static 'artikel1.png' %}" alt="Image 1" />
                 <div class="slide-text">
                   <h3>
@@ -100,19 +99,19 @@
                     PADA JANUARI 2025
                   </h3>
                 </div>
-              </div>
-              <div class="slide">
+              </a>
+              <a href="{% url 'artikel_detail' artikel_id=2 %}" class="slide">
                 <img src="{% static 'artikel2.jpg' %}" alt="Image 2" />
                 <div class="slide-text">
                   <h3>PENERAPAN PPH 21 TER</h3>
                 </div>
-              </div>
-              <div class="slide">
+              </a>
+              <a href="" class="slide">
                 <img src="{% static 'artikel3.jpeg' %}" alt="Image 3" />
                 <div class="slide-text">
                   <h3>SPT TAHUNAN</h3>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </section>
@@ -125,7 +124,7 @@
     </section>
     <div class="article-content">
       <div class="card1">
-        <a href="{% url 'artikel_detail' artikel_id=1 %}">
+        <a href="{% url 'artikel_detail' artikel_id=3 %}">
           <img src="{%static "artikel1.png"%}" alt="">
           <div class="isi-atas">
             <h3>
