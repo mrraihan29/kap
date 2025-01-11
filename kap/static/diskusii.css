@@ -148,6 +148,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  column-gap: 20px;
 }
 .nav-menu ul {
   display: flex;
@@ -211,6 +212,10 @@ header nav img {
   align-items: center;
   justify-content: center;
   /*width: 90px;*/
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; */
 }
 
 .sign-container a {
@@ -254,7 +259,11 @@ header nav img {
   font-size: 20px;
   color: #3f51b5;
   font-weight: bold;
-  padding-right: 40px;
+  /* padding-right: 40px; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Adjust this value based on your needs */
 }
 
 .popup {

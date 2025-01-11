@@ -922,7 +922,131 @@ footer {
 }
 
 /* Tablet Screen */
-@media only screen and (min-width: 577px) and (max-width: 768px) {
+
+@media only screen and (max-width: 430px) {
+  nav {
+    padding: 20px 20px;
+  }
+
+  .logo-container h1 {
+    display: none;
+  }
+
+  .sign-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px; /* Adjust this value based on your needs */
+  }
+
+  .sign-container h1 {
+    font-size: 12px;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    display: flex;
+    column-gap: 30px;
+    width: 100%;
+    padding-bottom: 6px;
+  }
+
+  .nav-menu ul li a {
+    font-size: 12px;
+  }
+
+  .logo-container img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .addDiskusi {
+    width: 80%;
+    margin-left: 25px;
+  }
+
+  .addkiri h1 {
+    font-size: 20px;
+  }
+
+  .addkiri select,
+  .addkiri button {
+    font-size: 14px;
+  }
+
+  .discuss-title h1 {
+    font-size: 150px;
+    width: auto;
+  }
+
+  .timestamp {
+    font-size: 18px;
+  }
+
+  .discuss-content {
+    font-size: 16px;
+  }
+
+  .filter-select {
+    font-size: 16px;
+    width: 200px;
+  }
+
+  .filter button {
+    width: 80px;
+  }
+
+  .card-container {
+    width: 80%;
+  }
+
+  .user-name {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .popup-category {
+    font-size: 14px;
+    background-color: #fabc3f;
+  }
+
+  .footer-kiri {
+    display: none;
+  }
+
+  .footer-kiri iframe {
+    width: 10%;
+    height: 10%;
+  }
+
+  .footer-kanan {
+    padding: 100px 70px;
+    justify-content: center;
+  }
+
+  .footer-kanan h1 {
+    font-size: 40px;
+  }
+  .footer-kanan p {
+    font-size: 20px;
+  }
+  .location {
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .location a {
+    font-size: 18px;
+  }
+
+  .sosmed {
+    padding-top: 0px;
+  }
+
+  .sosmed ul li a span {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 431px) and (max-width: 576px) {
   header {
     height: 100%;
   }
@@ -932,6 +1056,13 @@ footer {
 
   .logo-container h1 {
     display: none;
+  }
+
+  .sign-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px; /* Adjust this value based on your needs */
   }
 
   .nav-menu ul {
