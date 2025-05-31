@@ -17,8 +17,8 @@ def list_artikel(request):
     queryset = Artikel.objects.filter(deleted_at__isnull=True, published_at__isnull=False, published_at__lte=now(), draft_for__isnull=True).order_by('-published_at')
     data = queryset
     for artikel in data:
-        artikel.published_at = indo_date(artikel.published_at)
-
+        artikel.published_at = indo_date(artikel.published_at, month_limit=3)
+    
     return render(request, 'artikel/list_artikel.html', {'artikel_data': data})
 
 def detail_artikel(request, artikel_id):
@@ -147,7 +147,6 @@ def edit_artikel(request, artikel_id):
                 artikel.save()
                 messages.success(request, "Draft berhasil disimpan.")
                 return redirect('list_artikel_admin')
-
     else:
         form = ArtikelForm(instance=instance)
 

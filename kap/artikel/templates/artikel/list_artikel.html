@@ -143,84 +143,8 @@
           </a>
         </div>
       {% empty %}
-        <div class="card">
-          <a href="#">
-            <img src="" alt="">
-            <div class="isi-atas">
-              <h3>Tidak Ada Artikel</h3>
-              <p>-</p>
-            </div>
-            <h4>Belum ada artikel yang tersedia.</h4>
-          </a>
-        </div>
+            <h4 class="m-auto p-3 mt-3">Belum ada artikel yang tersedia.</h4>
       {% endfor %}
-
-      <div class="card">
-        <a href="{% url 'detail_artikel' artikel_id=2 %}">
-          <img src="{%static "artikel2.jpg"%}" alt="">
-          <div class="isi-atas">
-            <h3>PENERAPAN PPH <br />21 TER</h3>
-            <p>23 Des 2024</p>
-          </div>
-          <h4>
-            Perubahan PPh 21 menggunakan skema TER untuk pemotongan pajak.
-          </h4>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="{% url 'detail_artikel' artikel_id=3 %}">
-          <img src="{%static "artikel3.jpeg"%}" alt="">
-          <div class="isi-atas">
-            <h3>SPT TAHUNAN</h3>
-            <p>23 Des 2024</p>
-          </div>
-          <h4>
-            Pentingnya pelaporan SPT Tahunan dan sanksi jika tidak sesuai.
-          </h4>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="{% url 'detail_artikel' artikel_id=4 %}">
-          <img src="{%static "artikel4.jpg"%}" alt="">
-          <div class="isi-atas">
-            <h3>PPN WAJIB PUNGUT<br />BENDAHARAWAN NEGARA</h3>
-            <p>23 Des 2024</p>
-          </div>
-          <h4>
-            Peran Bendaharawan Pemerintah sebagai Wajib Pungut (Wapu) dalam
-            sistem PPN.
-          </h4>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="{% url 'detail_artikel' artikel_id=5 %}">
-          <img src="{%static "artikel5.jpg"%}" alt="">
-          <div class="isi-atas">
-            <h3>PERBEDAAN PPh 26</h3>
-            <p>23 Des 2024</p>
-          </div>
-          <h4>Perbedaan dan subjek pajak PPh 21 dan PPh 26.</h4>
-        </a>
-      </div>
-
-      {% comment %}
-      <div class="card">
-        <a href="{% url 'detail_artikel' artikel_id=6 %}">
-          <img src="{%static "opening1.JPG"%}" alt="">
-          <div class="isi-atas">
-            <h3>Penandatangan<br />MOUS UNS x DJP</h3>
-            <p>23 Des 2024</p>
-          </div>
-          <h4>
-            Kegiatan Rutin Pendampingan Konsultasi Akuntansi dan Perpajakan di
-            Tax Center UNS
-          </h4>
-        </a>
-      </div>
-      {% endcomment %}
     </div>
 
     <link

@@ -163,6 +163,21 @@
                         <input type="datetime-local" name="published_at" id="id_published_at" class="form-control" value="{{ form.instance.published_at|date:'Y-m-d\\TH:i' }}">
                     </div>
 
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
                     <!-- Buttons -->
                     <div class="d-flex gap-2">
                         <a href="{% url 'list_artikel_admin' %}" ><button type="button" class="btn btn-secondary">Back</button></a>
