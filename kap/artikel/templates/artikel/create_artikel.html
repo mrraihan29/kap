@@ -135,7 +135,7 @@
                     
                     <div class="mb-3">
                         <label for="id_title" class="form-label">Judul</label>
-                        <input type="text" name="title" id="id_title" maxlength="50" required class="form-control" placeholder="Masukkan judul artikel" value="{{ form.title.value|default_if_none:'' }}">
+                        <input type="text" name="title" id="id_title" maxlength="100" required class="form-control" placeholder="Masukkan judul artikel" value="{{ form.title.value|default_if_none:'' }}">
                     </div>
                     
                     <div class="mb-3">
@@ -147,7 +147,7 @@
                         <label for="id_image" class="form-label">Gambar</label>
                         <input type="file" name="image" id="id_image" accept="image/jpeg,image/png,image/gif,image/bmp,image/webp,image/tiff" required class="form-control">
                     </div>
-                    
+
                     {% if form.errors %}
                         <div class="alert alert-danger">
                             <ul class="mb-0">
