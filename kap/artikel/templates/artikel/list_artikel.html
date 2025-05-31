@@ -1,4 +1,6 @@
 {%load static%}
+{% load math_filters %}
+
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -15,6 +17,37 @@
       type="img/png"
       href="{% static 'nw-logo.png' %}" />
     <link rel="stylesheet" href="{%static "list_artikel.css"%}">
+
+    {% with count=artikel_data|length %}
+<style>
+  .slider {
+    display: flex;
+    width: {{ count|mul:100 }}%;
+    height: 100%;
+    animation: slide {{ count|add:"1"|mul:"3" }}s infinite;
+  }
+
+  .slide {
+    position: relative;
+    width: {{ 100|div:count }}%;
+    flex-shrink: 0;
+  }
+
+  @keyframes slide {
+    {% for img in artikel_data %}
+      {{ forloop.counter0|mul:100|div:count }}% {
+        transform: translateX(-{{ forloop.counter0|mul:100|div:count }}%);
+      }
+      {{ forloop.counter|mul:100|div:count|add:"-5" }}% {
+        transform: translateX(-{{ forloop.counter0|mul:100|div:count }}%);
+      }
+    {% endfor %}
+    100% {
+      transform: translateX(-{{ count|add:"-1"|mul:100|div:count }}%);
+    }
+  }
+</style>
+{% endwith %}
   </head>
 
   <body class="preload">
@@ -94,16 +127,16 @@
       <section class="fadeinup">
         <section class="wrapper">
           <div class="slider-container">
-            {% for artikel in artikel_data %}
             <div class="slider">
-              <a href="{% url 'detail_artikel' artikel.id %}" class="slide">
-                <img src="{{ artikel.image.url|default_if_none:''|escape}}" alt="no image" />
-                <div class="slide-text">
-                  <h3>{{ artikel.title }}</h3>
-                </div>
-              </a>
+              {% for artikel in slider_data %}
+                <a href="{% url 'detail_artikel' artikel.id %}" class="slide">
+                  <img src="{{ artikel.image.url|default_if_none:''|escape}}" alt="no image" />
+                  <div class="slide-text">
+                    <h3>{{ artikel.title }}</h3>
+                  </div>
+                </a>
+              {% endfor %}
             </div>
-            {% endfor %}
             {% if not artikel_data %}
             <div class="slider">
               <a href="" class="slide">
