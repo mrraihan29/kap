@@ -11,6 +11,7 @@
       type="image/gif"
       sizes="16x16" />
     <link rel="stylesheet" href="{%static "artikel.css"%}">
+    <link rel="stylesheet" href="{%static "ckeditor5.css"%}">
   </head>
   <body>
     <header>
@@ -103,45 +104,20 @@
         </div>-->
       <section class="title-container">
         <div class="judul">
-          <h1>{{judul}}</h1>
+          <h1>{{data.title}}</h1>
         </div>
-        <p>Pentingnya pelaporan SPT Tahunan dan sanksi jika tidak sesuai.</p>
-        <h2 class="tanggal">23 Des 2024</h2>
+        <p>{{data.description}}</p>
+        <h2 class="tanggal">{{data.published_at}}</h2>
         <div class="author">
           <img src="{%static "user-navy.png"%}" alt="">
-          <h2>Klinik Akuntansi Pajak</h2>
+          <h2>{{data.created_by.username}}</h2>
         </div>
       </section>
       <article class="artc-read">
-        <img src="{%static "artikel3.jpeg"%}" alt="">
-        <p>
-          Setiap tahun, wajib pajak di Indonesia diwajibkan untuk menyampaikan
-          Surat Pemberitahuan Tahunan (SPT Tahunan) kepada Direktorat Jenderal
-          Pajak (DJP). SPT Tahunan adalah surat yang oleh Wajib Pajak digunakan
-          untuk melaporkan penghitungan dan/atau pembayaran pajak, objek pajak
-          dan/atau bukan objek pajak, dan/atau harta dan kewajiban sesuai dengan
-          ketentuan peraturan perundang-undangan perpajakan. SPT Tahunan adalah
-          SPT untuk suatu Tahun Pajak atau Bagian Tahun Pajak. Peraturan Menteri
-          Keuangan Nomor 181/PMK.03/2007.
-        </p>
-        <p>
-          Berdasarkan UU No 28 tahun 2007 dalam SPT Tahunan menggunakan sistem
-          self assessment yakni Wajib Pajak menghitung, membayar, dan melaporkan
-          pajaknya secara mandiri. Pemerintah melalui SPT Tahunan dapat
-          memperoleh data mengenai penghasilan dan aset WP berdasarkan data ini
-          dapat digunakan untuk menganalisis kondisi perekonomian dan memastikan
-          keadilan dalam penerapan pajak. SPT Tahunan berguna sebagai dasar
-          perhitungan pajak oleh DJP, jika pada perhitungan WP ditemukan
-          ketidaksesuaian maka DJP dapat melakukan penyesuaian dan mengenai
-          sanksi kepada Wajib Pajak.
-        </p>
-        <p>
-          Sanksi yang dikenakan kepada wajib pajak jika terdapat ketidaksesuaian
-          dalam SPT Tahunan dan tidak melaporkan pajak sesuai dengan peraturan
-          undang-undang yakni terdapat sanksi berupa denda dan terdapat sanksi
-          pidana paling singkat 6 bulan dan paling lama 6 tahun, selain itu
-          terdapat sanksi berupa bunga atas jumlah pajak kurang bayar.
-        </p>
+        <img src="{{data.image.url|escape}}" alt="">
+        <div class="ck-content">
+          {{data.content|safe}}
+        </div>
       </article>
     </section>
     <footer>

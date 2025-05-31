@@ -129,7 +129,7 @@ table {
 /* START HEADER CSS */
 
 header {
-  height: 750px;
+  height: max-content;
   width: 100%;
   background-color: #f3f7ff;
   display: flex;
@@ -482,7 +482,7 @@ header nav img {
   margin-bottom: 50px;
 }
 
-.card1 {
+.article-content .card {
   color: white;
   border-radius: 25px;
   padding-top: 25px;
@@ -495,7 +495,7 @@ header nav img {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card1 img {
+.article-content .card img {
   height: 250px;
   width: 300px;
   border-radius: 20px;
@@ -522,13 +522,13 @@ header nav img {
   border-radius: 5px;
 }
 
-.card1 h4 {
+.article-content .card h4 {
   width: 300px;
   line-height: 1.5;
   text-align: justify;
 }
 
-.card1 a {
+.article-content .card a {
   color: white;
   border-radius: 25px;
   padding-top: 25px;
@@ -540,24 +540,9 @@ header nav img {
   text-decoration: none;
 }
 
-.card2 {
+.article-content .card:nth-child(even) {
   color: black;
-  border-radius: 25px;
-  padding-top: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #fabc3f;
-  width: 350px;
-  height: 500px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card2 img {
-  height: 250px;
-  width: 300px;
-  border-radius: 20px;
-  object-fit: cover;
 }
 
 .isi-atas {
@@ -572,34 +557,17 @@ header nav img {
   line-height: 1.2;
 }
 
-.card2 .isi-atas p {
-  font-size: 18px;
+.article-content .card:nth-child(even) .isi-atas p {
   color: white;
   background-color: #134b70;
-  padding: 5px;
-  border-radius: 5px;
 }
 
-.card2 h4 {
-  width: 300px;
-  line-height: 1.5;
-  text-align: justify;
-}
-
-.card2 a {
+.article-content .card:nth-child(even) a {
   color: black;
-  border-radius: 25px;
-  padding-top: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 350px;
-  height: 500px;
-  text-decoration: none;
 }
 
-.card1:hover,
-.card2:hover {
+.article-content .card:hover,
+.article-content .card:nth-child(even):hover {
   transform: translateY(-10px); /* Mengangkat kartu */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
 }

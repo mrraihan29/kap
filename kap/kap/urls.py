@@ -24,4 +24,6 @@ urlpatterns = [
     path('diskusi/', include('discussions.urls', namespace='discussions')),
     path('account/', include('account.urls', namespace='account')),
     path('', views.home, name='home'),
+    path('media/', views.media_proxy, name='media_proxy'),
+
 ]
