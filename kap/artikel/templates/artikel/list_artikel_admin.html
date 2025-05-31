@@ -145,19 +145,23 @@
               <thead>
                 <tr>
                   <th data-field="image" data-formatter="imageFormatter">Gambar</th>
-                  <th data-field="title" data-sortable="true">Judul</th>
-                  <th data-field="description" data-sortable="true">Deskripsi</th>
-                  <th data-field="created_by" data-sortable="true">Penulis</th>
-                  {% comment %} <th data-field="created_at" data-sortable="true">Dibuat</th> {% endcomment %}
-                  <th data-field="published_at" data-sortable="true" data-formatter="dateFormatter">Waktu Publish</th>
-                  <th data-field="status" data-formatter="statusFormatter">Status</th>
-                  <th data-field="actions" data-formatter="actionsFormatter">Aksi</th>
+                  <th data-field="title" data-sortable="true" data-width="200">Judul</th>
+                  <th data-field="description" data-sortable="true" data-width="200" data-formatter="descriptionFormatter">Deskripsi</th>
+                  <th data-field="created_by" data-sortable="true" data-width="50">Penulis</th>
+                  <th data-field="published_at" data-sortable="true" data-formatter="dateFormatter" data-width="180">Waktu Publish</th>
+                  <th data-field="status" data-formatter="statusFormatter" data-width="180">Status</th>
+                  <th data-field="actions" data-formatter="actionsFormatter" data-width="120">Aksi</th>
                 </tr>
               </thead>
             </table>
           </div>
         </div>
       <script>
+        function descriptionFormatter(value) {
+          if (!value) return '-';
+          return `<div class="text-truncate" style="max-width: 280px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">${value}</div>`;
+        }
+
         function actionsFormatter(value, row) {
           const editUrl = "{% url 'edit_artikel' 0 %}".replace('0', row.id);
           const deleteUrl = "{% url 'delete_artikel' 0 %}".replace('0', row.id);

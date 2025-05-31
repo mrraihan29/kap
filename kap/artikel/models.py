@@ -14,7 +14,7 @@ from account.models import CustomUser
 
 class Artikel(models.Model):
     title= models.CharField('Judul',max_length=100)
-    description= models.TextField('Deskripsi')
+    description= models.TextField('Deskripsi', max_length=200)
     image= models.ImageField('Gambar',upload_to='artikel/')
     content= CKEditor5Field(config_name='article', null=True, blank=True)
     published_at= models.DateTimeField('Waktu Publish', null=True, blank=True)
