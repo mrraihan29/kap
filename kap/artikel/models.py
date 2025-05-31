@@ -13,7 +13,7 @@ from account.models import CustomUser
 #     ARCHIVED = 'archived', 'Archived'
 
 class Artikel(models.Model):
-    title= models.CharField('Judul',max_length=50)
+    title= models.CharField('Judul',max_length=100)
     description= models.TextField('Deskripsi')
     image= models.ImageField('Gambar',upload_to='artikel/')
     content= CKEditor5Field(config_name='article', null=True, blank=True)
