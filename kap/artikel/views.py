@@ -19,7 +19,7 @@ def list_artikel(request):
     for artikel in data:
         artikel.published_at = indo_date(artikel.published_at, month_limit=3)
     
-    return render(request, 'artikel/list_artikel.html', {'artikel_data': data, 'slider_data': data[:4]})
+    return render(request, 'artikel/list_artikel.html', {'artikel_data': data, 'slider_data': data})
 
 def detail_artikel(request, artikel_id):
     artikel = get_object_or_404(Artikel, id=artikel_id, deleted_at__isnull=True, draft_for__isnull=True)
