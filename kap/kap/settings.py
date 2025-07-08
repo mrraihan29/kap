@@ -264,7 +264,7 @@ CKEDITOR_5_CONFIGS = {
         'toolbar': {
             'items': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
                     'subscript', 'superscript', 'highlight', '|'
-                    'bulletedList', 'numberedList' '|',  'blockQuote', 'imageUpload', '|',
+                    'bulletedList', 'numberedList', '|',  'blockQuote', 'imageUpload', '|',
                     'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
                     ],
             'shouldNotGroupWhenFull': True
@@ -280,6 +280,14 @@ CKEDITOR_5_CONFIGS = {
                 'alignCenter',
             ]
         },
+        'mediaEmbed': {'previewsInData': True},
+        'list': {
+            'properties': {
+                'styles': True,
+                'startIndex': True,
+                'reversed': True
+            }
+        }
     },
     'extends': {
         'blockToolbar': [
